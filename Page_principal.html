@@ -30,8 +30,24 @@
             <li><a href="#Back-end">Backend</a></li>
          </ul>
       </nav>
+    <div class="login-popup">
+      <div class="form-popup" id="popupForm">
+        <form action="/action_page.php" class="form-container">
+          <h2>Veuillez vous connecter</h2>
+          <label for="email">
+            <strong>E-mail</strong>
+          </label>
+          <input type="text" id="email" placeholder="Votre Email" name="email" required />
+          <label for="psw">
+            <strong>Mot de passe</strong>
+          </label>
+          <input type="password" id="psw" placeholder="Votre Mot de passe" name="psw" required />
+          <button type="submit" class="btn">Connecter</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Fermer</button>
+        </form>
+      </div>
+    </div>
     <script>
-        // panier
       function openForm() {
         document.getElementById("popupForm").style.display = "block";
       }
@@ -87,27 +103,8 @@
             <div class="container" id="container-familles">    
                 <!-- La ou le code est gen -->
             </div>
+            <button type="button" class="open-button" onclick="openForm()">PANIER</button>
         </form>
-        <div class="open-btn">
-      <button class="open-button" onclick="openForm()">PANIER</button>
-    </div>
-    <div class="login-popup">
-      <div class="form-popup" id="popupForm">
-        <form action="/action_page.php" class="form-container">
-          <h2>les bonnes pratiques que vous avez selectionnés</h2>
-          <label for="email">
-            <strong>E-mail</strong>
-          </label>
-          <input type="text" id="email" placeholder="Votre Email" name="email" required />
-          <label for="psw">
-            <strong>Mot de passe</strong>
-          </label>
-          <input type="password" id="psw" placeholder="Votre Mot de passe" name="psw" required />
-          <button type="submit" class="btn">Télécharger PDF</button>
-          <button type="button" class="btn cancel" onclick="closeForm()">Fermer</button>
-        </form>
-      </div>
-    </div>
       </section>
       <footer>
          <p>site web créé par Corentin, Alexandre, Kaoutar, Lucie dans le cadre du projet Design4green</p>
