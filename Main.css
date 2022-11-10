@@ -1,0 +1,449 @@
+/* Header/logo Title */
+header {
+  background-color: #121212;
+  /*padding: 60px; */
+  text-align: center;
+  color: #f5f6f8;
+}
+
+/*Navbar*/
+
+ul img {
+  margin-left: 2%;
+  width: 10%;
+}
+
+/* CSS des barres */
+
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+
+#checkbox {
+    position:absolute;
+    bottom:0;
+    right:0;
+    width: 25px;
+    height: 25px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  text-decoration: underline;
+  /margin-left: 100px;/ word-wrap: break-word;
+  min-height: 50px;
+}
+
+nav ul {
+  padding-left: 0px;
+  background-color: #090808;
+  /* box-shadow: 3px 3px 6px black; */
+  /* border-radius: 10px 5px 10px 5px; */
+  border-image-outset: ;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+ul li {
+  height: auto;
+  width: 25%;
+  text-align: center;
+  list-style: none;
+}
+
+ul a {
+  padding: 18px 0;
+  text-decoration: none;
+  color: ;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: #e3e4e5;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #75A9F9;
+}
+
+/*End navbar*/
+
+/*
+body section img{
+  float:left;
+}
+body section  p:nth-child(even){
+  float:right;
+  color:#160edc;
+  text-align: left;
+  width:25%;
+  }
+body section p:nth-child(odd){
+  float:left;
+  color:#cd0edc;
+  width:25%;
+  padding:0 2%;
+}*/
+
+footer {
+  /* position: absolute; */
+  /* left: 0; */
+  bottom: 0;
+  width: 100%;
+  background-color: #111010;
+  color: #ffffff;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/*
+boite et carre pour les bonnes pratiques */
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/*placer les blocs les un a coté dans autres */
+.container,
+.container-meta {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+h3,
+.conteneur-bp #texte-fiche h2 {
+  color: #262626;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  padding: 0;
+}
+
+p {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #666666;
+}
+
+p.small {
+  font-size: 14px;
+}
+
+p.small-bas-droite {
+  font-size: 0.7rem;
+  text-align: right;
+  font-style: italic;
+  width: 70%;
+  float: right;
+  font-weight: bold;
+  line-height: 0.8rem;
+}
+
+/*creation des blocs */
+.card3 {
+  display: block;
+  top: 0px;
+  position: relative;
+  width: 23%;
+  background-color: #f2f8f9;
+  border-radius: 6px;
+  padding: 32px 24px;
+  margin: 1%;
+  text-decoration: none;
+  overflow: hidden;
+  border: 1px solid #f2f8f9;
+  transition: all 0.3s ease-out;
+}
+
+/*.card3 .odd span {
+  color:#fff;
+  font-size:0.7rem;
+  font-weight:normal;
+}*/
+
+/*.card3 .odd span.incontournable {text-transform:none;}
+.card3 .odd span.css-recommandation {background:#2054a2;}
+.card3 .odd span.css-conseil {background:#0b8e76;}
+
+.card3 .go-corner {opacity: 0.7;transition: all 0.3s ease-out;}
+.card3:hover {border: 1px solid #00838d;z-index: 500;}
+.card3:hover p {color: #00838d;}
+.card3:hover .go-corner {transition: opactiy 0.3s linear;opacity: 1;}
+*/
+#container-familles .card3 {
+  width: 31.3333333%;
+  background: #0c3b44;
+}
+
+/* taille des blocs*/
+#container-familles .card3:hover {
+  background: #3e808d;
+}
+
+#container-familles .card3:hover p {
+  color: #d2e7eb;
+}
+
+#container-familles .card3 p {
+  color: #ecf1f1;
+}
+
+#container-familles .card3 h2 {
+  color: #ecc706;
+  font-size: 1.2rem;
+}
+
+#container-familles .card3 .go-corner {
+  background-color: #ecf1f1;
+  opacity: 1;
+}
+
+#container-familles .card3 .go-arrow {
+  color: #3e808d;
+}
+
+#container-familles .card3.bgd-1 {
+  background: #3e808d;
+}
+
+/* couleur du test et du fond des blocs */
+#container-familles .card3.bgd-2 {
+  background: #0c3b44;
+}
+
+/* couleur du test et du fond des blocs */
+#container-familles .card3.bgd-1:hover {
+  background: #2c6a76;
+}
+
+/* couleur du test et du fond des blocs */
+#container-familles .card3.bgd-2:hover {
+  background: #185864;
+}
+
+/* couleur du span famille */
+
+#container-familles .card3.bgd-1 .famille-carte .famille {
+  background: #fcd40c;
+  color: #144b65;
+  text-transform: uppercase;
+}
+
+/* couleur du span incontournable */
+
+#container-familles .card3.bgd-1 .famille-carte .incontournable {
+  background: #db2151;
+  color: #144b65;
+  text-transform: uppercase;
+  margin-left: 10px;
+}
+
+/* couleur du test et du fond des blocs */
+#container-familles .card3.bgd-2 .famille-carte span {
+  background: #fcd40c;
+  color: #144b65;
+  text-transform: uppercase;
+}
+
+/* couleur du test et du fond des blocs */
+#container-familles .odd-card h2 {
+  color: #fff;
+}
+
+/* couleur du test et du fond des blocs */
+
+/*police dans le carre*/
+.famille-carte span,
+.odd span {
+  display: inline-block;
+  padding: 5px 5px;
+  border-radius: 3px;
+  background: #fff;
+  color: #144b65;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.famille-carte span a,
+.odd span a {
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}
+
+.famille-carte span a,
+.odd span a:hover {
+  text-decoration: none;
+  color: #7bd1bc;
+}
+
+
+/*pop up panier */
+/* Fixez le bouton sur le côté gauche de la page the button on the left side of the page */
+.open-btn {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Stylez et fixez le bouton sur la page */
+.open-button {
+  background-color: #1c87c9;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0.8;
+  position: sticky;
+  margin-left: auto;
+  margin-right: auto ;
+}
+
+/* Positionnez la forme Popup */
+.login-popup {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+/* Masquez la forme Popup */
+.form-popup {
+  display: none;
+  position: fixed;
+  left: 45%;
+  top: 5%;
+  transform: translate(-45%, 5%);
+  border: 2px solid #666;
+  z-index: 9;
+}
+
+/* Styles pour le conteneur de la forme */
+.form-container {
+  max-width: 300px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* Largeur complète pour les champs de saisie */
+.form-container input[type="text"],
+.form-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #eee;
+}
+
+/* Quand les entrées sont concentrées, faites quelque chose */
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Stylez le bouton de connexion */
+.form-container .btn {
+  background-color: #8ebf42;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+/* Stylez le bouton pour annuler */
+.form-container .cancel {
+  background-color: #cc0000;
+}
+
+/* Planez les effets pour les boutons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
+
+
+/*responsivité des carres*/
+@media only screen and (max-width: 782px) {
+
+  #container-familles .card3,
+  .card3 {
+    width: 100%;
+  }
+
+  .odd span {
+    margin-top: 15px;
+  }
+
+  .conteneur-bp {
+    width: 100%;
+  }
+
+  #main-container>h2 {
+    padding: 10px 0 8px 0;
+    margin: 0;
+  }
+
+  .entete-famille {
+    display: block;
+    margin-bottom: 20px;
+    margin-left: 1%;
+  }
+
+  .conteneur-bp {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+
+
+  #fiche-bonne-pratique .container {
+    padding: 1%;
+    background: #2b7c86;
+    border: 0px solid #ecf1f1;
+  }
+
+  .incontournables-famille {
+    float: none;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  .acteurs-metiers {
+    display: block;
+  }
+
+  .acteurs-metiers div,
+  .acteurs-metiers div:first-of-type {
+    width: 100%;
+    padding: 0;
+  }
+
+}
+
+
+
