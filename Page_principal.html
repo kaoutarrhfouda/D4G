@@ -87,7 +87,8 @@
                                 <h2>${recommandation}</h2>
                                 <p class="small">${thematique}</p>
                                 <p class="small ">${critere}</p>
-                                <input type="checkbox" id="checkbox" name="checkbox_`+i+`">
+                                <input type="checkbox" id="checkbox" name="checkbox_`+i+`" `
+                                    + ( bonnes_pratiques_list[0].getElementsByTagName('row-'+i)[13].innerHTML == 1 ? (`checked`) : '' )+`>
                             </a>`;
                 //mets dans la variable results l'élément du site HTML dont l'id est results
                 const results = document.querySelector("#container-familles");
