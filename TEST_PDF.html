@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title id="myPractices">Softball</title>
+		<title Id="MyPractice">Softball</title>
 	</head>
 	<body>
 		<div class="table-2">
@@ -35,6 +35,8 @@
   			padding: 10px;
 		}
 	</style>
+	                <button onclick="printDiv()">PRINT </button>
+
 	<script>
 		//requete vers le fichier XML
 		fetch("https://cors-anywhere.herokuapp.com/https://pastebin.com/raw/aBRp3TQw")
@@ -72,25 +74,20 @@
 			};
 
 		});
-
-        </script>	
-                <button onclick="printDiv()">PRINT </button>
-
-	<script>
-		function printDiv() {
-            var divContents = document.getElementById("myPractices").innerHTML;
-            var a = window.open('', '', 'height=800, width=800');
+				function printDiv() {
+            var divContents = document.getElementById("MyPractice").innerHTML;
+            var a = window.open('','height=800, width=800');
             a.document.write('<html>');
-            a.document.write('<head><link rel="main" href="./../css/main.css" type="text/css"><link rel="main" href="./../utils/lib/bootstrap/css/bootstrap.main.css" /><link rel="main" href="./../utils/lib/fuentes/iconic/css/material-design-iconic-font.main.css" type="text/css"></head>');
+            a.document.write('<title Id="MyPractice">Softball</title>');
+            a.document.write('  ')
             a.document.write('<body>');
             a.document.write(divContents);
             a.document.write('</body></html>');
             a.document.close();
             a.print();
+		}
 
-	</script>	
-
-
+        </script>	
 
 	</body>
 </html>
