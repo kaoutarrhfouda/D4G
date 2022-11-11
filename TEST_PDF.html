@@ -72,20 +72,24 @@
 			};
 
 		});
-				function printDiv() {
+
+    </script>	
+	<script>
+		function printDiv() {
             var divContents = document.getElementById("myPractices").innerHTML;
             var a = window.open('', '', 'height=800, width=800');
             a.document.write('<html>');
-            a.document.write('<head><link rel="stylesheet" href="./../css/main.css" type="text/css"><link rel="stylesheet" href="./../utils/lib/bootstrap/css/bootstrap.min.css" /><link rel="stylesheet" href="./../utils/lib/fuentes/iconic/css/material-design-iconic-font.min.css" type="text/css"></head>');
+            a.document.write('<head><link rel="main" href="./../css/main.css" type="text/css"><link rel="main" href="./../utils/lib/bootstrap/css/bootstrap.main.css" /><link rel="main" href="./../utils/lib/fuentes/iconic/css/material-design-iconic-font.main.css" type="text/css"></head>');
             a.document.write('<body>');
             a.document.write(divContents);
             a.document.write('</body></html>');
             a.document.close();
             a.print();
-        }
 
-<button onclick="printDiv()">PRINT</button>
-
+        <button onclick="printDiv()">PRINT </button>
 	</script>	
+
+
+
 	</body>
 </html>
