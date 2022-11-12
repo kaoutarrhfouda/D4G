@@ -5,10 +5,10 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title Id="MyPractice">Softball</title>
+		<title>Softball</title>
 	</head>
 	<body>
-		<div class="table-2">
+		<div class="table-2" Id="table-2">
 			<table width="100%">
 				<thead>
 					<tr>
@@ -74,11 +74,13 @@
 			};
 
 		});
-				function printDiv() {
-            var divContents = document.getElementById("MyPractice").innerHTML;
+
+		//Print le pdf
+		function printDiv() {
+            var divContents = document.getElementById("table-2").innerHTML;
             var a = window.open();
             a.document.write('<html>');
-            a.document.write('<title Id="MyPractice">'Softball'</title>');
+            a.document.write('<title Id="MyPractice">Softball</title>');
             a.document.write('<body>');
        	    a.document.write('<style type="text/css">table{border-collapse: collapse;}th, td{border: 1px solid black;padding: 10px;</style>');
             a.document.write(divContents);
