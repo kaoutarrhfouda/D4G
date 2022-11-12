@@ -1,10 +1,10 @@
 /* Header/logo Title */
 header {
-  background-color: #121212;
-  /*padding: 60px; */
+/*  background-color: #121212;
+*/  /*padding: 60px; */
   text-align: center;
-  color: #f5f6f8;
-}
+  color:#325144;
+*/}
 
 /*Navbar*/
 
@@ -14,6 +14,11 @@ ul img {
 }
 
 /* CSS des barres */
+h3{
+  color:#325144;
+/*  text-align: center;
+*/}
+
 
 hr {
   display: block;
@@ -21,8 +26,9 @@ hr {
   margin-bottom: 0.5em;
   margin-left: auto;
   margin-right: auto;
-  border-style: inset;
+  border-style: solid;
   border-width: 1px;
+  color:white;
 }
 
 #checkbox {
@@ -45,8 +51,8 @@ nav {
 
 nav ul {
   padding-left: 0px;
-  background-color: #090808;
-  /* box-shadow: 3px 3px 6px black; */
+/*  background-color: #090808;
+*/  /* box-shadow: 3px 3px 6px black; */
   /* border-radius: 10px 5px 10px 5px; */
   border-image-outset: ;
   display: flex;
@@ -70,12 +76,12 @@ ul a {
 
 a {
   text-decoration: none;
-  color: #e3e4e5;
+  color:#325144;
 }
 
 a:hover {
   text-decoration: none;
-  color: #75A9F9;
+  color:#325144;
 }
 
 /*End navbar*/
@@ -102,9 +108,8 @@ footer {
   /* left: 0; */
   bottom: 0;
   width: 100%;
-  background-color: #111010;
-  color: #ffffff;
-  /* text-align: center; */
+/*background-color: #111010;
+*/  /* text-align: center; */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -130,9 +135,8 @@ boite et carre pour les bonnes pratiques */
   justify-content: flex-start;
 }
 
-h3,
-.conteneur-bp #texte-fiche h2 {
-  color: #262626;
+h3,.conteneur-bp #texte-fiche h2 {
+  color:#325144;
   font-size: 17px;
   line-height: 24px;
   font-weight: 700;
@@ -144,7 +148,7 @@ p {
   font-size: 17px;
   font-weight: 400;
   line-height: 20px;
-  color: #666666;
+  color:#325144;
 }
 
 p.small {
@@ -225,28 +229,28 @@ p.small-bas-droite {
 }
 
 #container-familles .card3.bgd-1 {
-  background: #3e808d;
+  background: #6A8E;
 }
 
 /* couleur du test et du fond des blocs */
 #container-familles .card3.bgd-2 {
-  background: #0c3b44;
+  background: #6A8E;
 }
 
 /* couleur du test et du fond des blocs */
 #container-familles .card3.bgd-1:hover {
-  background: #2c6a76;
+  background: #6A8E7F;
 }
 
 /* couleur du test et du fond des blocs */
 #container-familles .card3.bgd-2:hover {
-  background: #185864;
+  background: #6A8E7F;
 }
 
 /* couleur du span famille */
 
 #container-familles .card3.bgd-1 .famille-carte .famille {
-  background: #fcd40c;
+  background:#f7f7ff;
   color: #144b65;
   text-transform: uppercase;
 }
@@ -438,6 +442,5 @@ p.small-bas-droite {
   }
 
 }
-
 
 
