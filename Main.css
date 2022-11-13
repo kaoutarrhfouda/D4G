@@ -1,44 +1,17 @@
 /* Header/logo Title */
 header {
-/*  background-color: #121212;
-*/  /*padding: 60px; */
   text-align: center;
   color:#325144;
-*/}
-
-/*Navbar*/
-
-ul img {
-  margin-left: 2%;
-  width: 10%;
 }
 
-/* CSS des barres */
 h3{
   color:#325144;
-/*  text-align: center;
-*/}
-
-
-hr {
-  display: block;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  margin-left: auto;
-  margin-right: auto;
-  border-style: solid;
-  border-width: 1px;
-  color:white;
+}
+h4{
+  color:#325144;
 }
 
-#checkbox {
-    position:absolute;
-    bottom:0;
-    right:0;
-    width: 25px;
-    height: 25px;
-}
-
+/*Navbar*/
 nav {
   display: flex;
   flex-direction: column;
@@ -49,21 +22,8 @@ nav {
   min-height: 50px;
 }
 
-/*Table dans la fenetre pop up */
-table{
-  border-collapse: collapse;
-}
-
-th, td{
-  border: 1px solid black;
-  padding: 10px;
-}
-
 nav ul {
   padding-left: 0px;
-/*  background-color: #090808;
-*/  /* box-shadow: 3px 3px 6px black; */
-  /* border-radius: 10px 5px 10px 5px; */
   border-image-outset: ;
   display: flex;
   flex-direction: row;
@@ -93,45 +53,32 @@ a:hover {
   text-decoration: none;
   color:#325144;
 }
-
 /*End navbar*/
-
-/*
-body section img{
-  float:left;
+/* CSS des barres */
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-width: 1px;
+  color:white;
 }
-body section  p:nth-child(even){
-  float:right;
-  color:#160edc;
-  text-align: left;
-  width:25%;
-  }
-body section p:nth-child(odd){
-  float:left;
-  color:#cd0edc;
-  width:25%;
-  padding:0 2%;
-}*/
 
 footer {
-  /* position: absolute; */
-  /* left: 0; */
   bottom: 0;
   width: 100%;
-/*background-color: #111010;
-*/  /* text-align: center; */
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-/*
-boite et carre pour les bonnes pratiques */
+/*boite et carre pour les bonnes pratiques */
 * {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
-
 
 
 /*placer les blocs les un a coté dans autres */
@@ -191,21 +138,6 @@ p.small-bas-droite {
   transition: all 0.3s ease-out;
 }
 
-/*.card3 .odd span {
-  color:#fff;
-  font-size:0.7rem;
-  font-weight:normal;
-}*/
-
-/*.card3 .odd span.incontournable {text-transform:none;}
-.card3 .odd span.css-recommandation {background:#2054a2;}
-.card3 .odd span.css-conseil {background:#0b8e76;}
-
-.card3 .go-corner {opacity: 0.7;transition: all 0.3s ease-out;}
-.card3:hover {border: 1px solid #00838d;z-index: 500;}
-.card3:hover p {color: #00838d;}
-.card3:hover .go-corner {transition: opactiy 0.3s linear;opacity: 1;}
-*/
 #container-familles .card3 {
   width: 31.3333333%;
   background: #0c3b44;
@@ -258,7 +190,6 @@ p.small-bas-droite {
 }
 
 /* couleur du span famille */
-
 #container-familles .card3.bgd-1 .famille-carte .famille {
   background:#f7f7ff;
   color: #144b65;
@@ -266,7 +197,6 @@ p.small-bas-droite {
 }
 
 /* couleur du span incontournable */
-
 #container-familles .card3.bgd-1 .famille-carte .incontournable {
   background: #db2151;
   color: #144b65;
@@ -287,8 +217,6 @@ p.small-bas-droite {
 }
 
 /* couleur du test et du fond des blocs */
-
-/*police dans le carre*/
 .famille-carte span,
 .odd span {
   display: inline-block;
@@ -315,6 +243,24 @@ p.small-bas-droite {
 
 
 /*pop up panier */
+
+/*Table dans la fenetre pop up */
+table{
+  border-collapse: collapse;
+}
+
+th, td{
+  border: 1px solid black;
+  padding: 10px;
+}
+
+#checkbox {
+    position:absolute;
+    bottom:0;
+    right:0;
+    width: 25px;
+    height: 25px;
+}
 
 /* Stylez et fixez le bouton sur la page */
 .open-button {
@@ -457,5 +403,4 @@ p.small-bas-droite {
   }
 
 }
-
 
