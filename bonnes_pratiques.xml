@@ -1,0 +1,1613 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<row-0>Architecture</row-0>
+	<row-0>2. Anticiper l'exploitation des services</row-0>
+	<row-0>Thématique : Cycle de vie</row-0>
+	<row-0>Est-ce que les environnements autres que production (DEV, QA, ...) sont éteints ou décommissionnés en dehors des plages d'usage (la nuit, en dehors des périodes de tests) ?</row-0>
+	<row-0>B</row-0>
+	<row-0>A</row-0>
+	<row-0>A</row-0>
+	<row-0>*</row-0>
+	<row-0>Low</row-0>
+	<row-0>Periodic</row-0>
+	<row-0>Est-ce que l'infrastructure / l'application éteint les environnements non sollicités en permanence ?</row-0>
+	<row-0>En dehors de la production, qui peut avoir une exigence de disponibilité 24/7, les autres environnements (tests, intégration, recette) sont le plus souvent liés à des opérations humaines soumises à des plages horaires restreintes, voire à des périodes limitées. Lorsque les environnements ne sont pas utilisés, ils ne doivent pas être actifs afin de réduire les consommations énergétiques de ces configurations. Ils doivent être décommissionnés lorsqu'aucune utilisation ultérieure n'est envisagée sur une longue période.</row-0>
+	<row-0>Le dossier technique des équipements prend en compte les périodes d'utilisation et les règles d'extinction / décommissionnement.</row-0>
+	<row-0>1</row-0>
+	<row-1>Architecture</row-1>
+	<row-1>5. Limiter les volumétries dans les échanges</row-1>
+	<row-1>Design Logiciel NR</row-1>
+	<row-1>Quelle est l'efficience de mon protocole d'échange entre le contenu et le contenant ?</row-1>
+	<row-1>B</row-1>
+	<row-1>B</row-1>
+	<row-1>B</row-1>
+	<row-1>*</row-1>
+	<row-1>High</row-1>
+	<row-1>OnUpdate</row-1>
+	<row-1>Les données sont-elles compressées avant de transiter sur le réseau ?</row-1>
+	<row-1>La distribution des traitements sur des hardwares différents et distants impose des mécanismes de transfert qui peuvent être à la fois fréquents et volumineux. Les gains environnementaux sur ces points peuvent être traités en réduisant le volume de données échangées. Les compressions de données requièrent des ressources de calcul qui peuvent rendre inefficaces ou pénalisantes ces opérations.</row-1>
+	<row-1>Audit de performance</row-1>
+	<row-1>0</row-1>
+	<row-2>Architecture</row-2>
+	<row-2>7. Associer les données, les flux, les applicatifs et la sécurité pour permettre leur identification et leur traçabilité</row-2>
+	<row-2>Thématique : Cycle de vie</row-2>
+	<row-2>Chaque composant déployé est-il qualifié du point de vue de sa durée de vie, et les procédures de déprovisonnement sont-elles systématiquement exprimées ?</row-2>
+	<row-2>B</row-2>
+	<row-2>B</row-2>
+	<row-2>B</row-2>
+	<row-2>*</row-2>
+	<row-2>Medium</row-2>
+	<row-2>Periodic</row-2>
+	<row-2>Quelle durée de vie est associée à chaque composant ?</row-2>
+	<row-2>Toutes les ressources d'un composant doivent être gérées et une durée de vie, un processus de retrait doit être mis en place. Ces éléments doivent aussi prendre en compte les traitements récurrents (batch, CRON, ..), les données et les sauvegardes. Le maintien ou l'oubli sur des systèmes en production de composants inactifs est à la fois un gaspillage de ressources, mais aussi une fragilité dans la sécurité.</row-2>
+	<row-2>Chaque élément référencé dans le Dossier Technique porte une information de fin de vie</row-2>
+	<row-2>1</row-2>
+	<row-3>Architecture</row-3>
+	<row-3>9. Définir les objectifs NR du projet et leur adéquation dans le contexte opérationnel</row-3>
+	<row-3>Thématique : Design Logiciel</row-3>
+	<row-3>L'ensemble des équipements techniques utilisés par le service sont-ils identifiés ?</row-3>
+	<row-3>B</row-3>
+	<row-3>B</row-3>
+	<row-3>B</row-3>
+	<row-3>*</row-3>
+	<row-3>High</row-3>
+	<row-3>OnUpdate</row-3>
+	<row-3>Quels sont les équipements qui devront faire l'objet d'une acquisition ou d'un remplacement ?</row-3>
+	<row-3>La conception, le développement, les tests, la production, la gestion de disponibilité sont des étapes qui vont utiliser des ressources techniques. Chacune de ces ressources doit être identifiée et ses caractéristiques répertoriées. </row-3>
+	<row-3>Une gestion de configuration est mise en place</row-3>
+	<row-3>1</row-3>
+	<row-4>Architecture</row-4>
+	<row-4>9. Définir les objectifs NR du projet et leur adéquation dans le contexte opérationnel</row-4>
+	<row-4>Infrastructure NR</row-4>
+	<row-4>Pour chaque équipement, les caractéristiques sont-elles disponibles ?</row-4>
+	<row-4>C</row-4>
+	<row-4>B</row-4>
+	<row-4>B</row-4>
+	<row-4>*</row-4>
+	<row-4>High</row-4>
+	<row-4>Periodic</row-4>
+	<row-4>Les seuils sont-ils définis pour envisager le remplacement ?</row-4>
+	<row-4>La position de l'équipement dans son cycle de vie et son impact environnemental doivent être connus pour utiliser au mieux les équipements disponibles.</row-4>
+	<row-4>Gestion de configuration</row-4>
+	<row-4>0</row-4>
+	<row-5>Back-end</row-5>
+	<row-5>1. Réduire l'impact des données de leur stockage et accès</row-5>
+	<row-5>Thématique : Données</row-5>
+	<row-5>Est-ce que le nombre de requêtes est minimisé (proscrire l'usage de boucle) ?</row-5>
+	<row-5>C</row-5>
+	<row-5>A</row-5>
+	<row-5>A</row-5>
+	<row-5>*</row-5>
+	<row-5>High</row-5>
+	<row-5>OnUpdate</row-5>
+	<row-5>Combien de requêtes sont utilisées pour un parcours utilisateur ?</row-5>
+	<row-5>Chaque échange va consommer des ressources sur l'émetteur et le destinataire, consommer des flux d'échange et des données. Il est nécessaire de réduire ces échanges</row-5>
+	<row-5>L'analyse des codes sources couvrent les éléments de performance.</row-5>
+	<row-5>1</row-5>
+	<row-6>Back-end</row-6>
+	<row-6>1. Réduire l'impact des données de leur stockage et accès</row-6>
+	<row-6>Données</row-6>
+	<row-6>Est-ce que les requêtes implémentées utilisent les jointures plutôt que de multiplier les requêtes ?</row-6>
+	<row-6>C</row-6>
+	<row-6>B</row-6>
+	<row-6>B</row-6>
+	<row-6>**</row-6>
+	<row-6>High</row-6>
+	<row-6>OnUpdate</row-6>
+	<row-6>La performance des jointures est-elle optimisée ?</row-6>
+	<row-6>Les mécanismes d'accès aux données peuvent engendrer des temps de traitement importants et donc une utilisation importante de ressources. Le plus souvent ces charges sont associées à une session utilisateur et donc se multiplient avec l'augmentation du trafic sur le service. Les moteurs de SGBD proposent plusieurs mécanismes d'analyse efficaces vis-à-vis de l'organisation des données et du besoin. Réduire la charge d'accès aux données pour une session utilisateur est utile d'un point de vue environnemental et efficace pour les performances techniques du service.</row-6>
+	<row-6>Code source - SGBD</row-6>
+	<row-6>0</row-6>
+	<row-7>Back-end</row-7>
+	<row-7>1. Réduire l'impact des données de leur stockage et accès</row-7>
+	<row-7>Données</row-7>
+	<row-7>Est-ce que la suppression des données obsolètes est gérée ?</row-7>
+	<row-7>C</row-7>
+	<row-7>A</row-7>
+	<row-7>A</row-7>
+	<row-7>**</row-7>
+	<row-7>High</row-7>
+	<row-7>Periodic</row-7>
+	<row-7>Les durées de vie des données sont-elles gérées ?</row-7>
+	<row-7>La réglementation impose de maîtriser le cycle de vie des données pour certaines catégories (données personnelles encadrées par le RGPD). Les autres catégories de données ne sont pas prises en compte, ce qui conduit à accumuler les données sans prendre en compte les délais de péremptions, ce qui introduit un accroissement permanent de la volumétrie de données, des volumes de sauvegardes, de ressources consommées par les accès aux données. Au fil du temps, le niveau de précision des données perd de son importance ce qui doit conduire à réduire la volumétrie dans la phase précédant le retrait pur et simple.</row-7>
+	<row-7>L'analyse d'impact détermne les actions de réduction des impacts avec les acteurs concernés</row-7>
+	<row-7>0</row-7>
+	<row-8>Back-end</row-8>
+	<row-8>1. Réduire l'impact des données de leur stockage et accès</row-8>
+	<row-8>Données</row-8>
+	<row-8>Est-ce que les index des bases de données sont cohérents par rapport aux opérations ?</row-8>
+	<row-8>C</row-8>
+	<row-8>A</row-8>
+	<row-8>A</row-8>
+	<row-8>**</row-8>
+	<row-8>High</row-8>
+	<row-8>Periodic</row-8>
+	<row-8>Les performances des index sont-elles revues périodiquement ?</row-8>
+	<row-8>L'organisation des données a un impact fort sur la performance de recherche dans un SGBD. Les règles de structuration des collections de données permettent d'optimiser ces points. Les moteurs de SGBD disposent aussi d'indicateurs de performance qui facilitent les démarches d'optimisation. Moins de temps et de traitement d'accès aux données engendre moins de consommations d'énergies et un besoin plus faible de surdimensionnement des serveurs qui hébergent ces moteurs.</row-8>
+	<row-8>L'administration des SGBD permet de suivre les performances des index et les besoins de restructuration des bases de données</row-8>
+	<row-8>0</row-8>
+	<row-9>Back-end</row-9>
+	<row-9>1. Réduire l'impact des données de leur stockage et accès</row-9>
+	<row-9>Données</row-9>
+	<row-9>"Est-ce que les données ""vivantes"" et ""mortes"" sont gérées de manière différentes (ex: Stockage lent pour les données ""mortes"") ?"</row-9>
+	<row-9>C</row-9>
+	<row-9>B</row-9>
+	<row-9>B</row-9>
+	<row-9>***</row-9>
+	<row-9>Low</row-9>
+	<row-9>Periodic</row-9>
+	<row-9>Quelle volumétrie de données inactives est conservée ?</row-9>
+	<row-9>Les données d'historiques doivent être conservées pour des raisons légales ou de fonctionnalités du service. Les taux d'utilisation des données inactives ne justifient pas l'usage de mécanismes de haute performance pour leur stockage. Les mécanismes de stockage les plus performants sont aussi souvent ceux qui sont les plus consommateurs d'énergie ou qui ont un cycle de renouvellement physique plus court.</row-9>
+	<row-9>Analyse d'impact</row-9>
+	<row-9>0</row-9>
+	<row-10>Back-end</row-10>
+	<row-10>1. Réduire l'impact des données de leur stockage et accès</row-10>
+	<row-10>Données</row-10>
+	<row-10>Est-ce que les données souvent accédées sont disponibles en RAM ?</row-10>
+	<row-10>C</row-10>
+	<row-10>B</row-10>
+	<row-10>B</row-10>
+	<row-10>**</row-10>
+	<row-10>Medium</row-10>
+	<row-10>Periodic</row-10>
+	<row-10>Quel taux d'accès physique aux données est mesuré ?</row-10>
+	<row-10>La consommation de ressources de traitement est plus importante lorsque les informations doivent être collectées sur des supports physiques (disques, réseaux) plutôt qu'en mémoire RAM. Les données les plus fréquemment accédées doivent bénéficier de cette solution pour réduire l'énergie d'accès, la performance sera aussi plus élevée. </row-10>
+	<row-10>Dossier technique</row-10>
+	<row-10>0</row-10>
+	<row-11>Back-end</row-11>
+	<row-11>1. Réduire l'impact des données de leur stockage et accès</row-11>
+	<row-11>Données</row-11>
+	<row-11>Est-ce que les réplications de données entre plusieurs instances de moteur de base de données (Cluster) sont adaptées à la sensibilité et au besoin de disponibilité ?</row-11>
+	<row-11>C</row-11>
+	<row-11>A</row-11>
+	<row-11>B</row-11>
+	<row-11>***</row-11>
+	<row-11>High</row-11>
+	<row-11>OnUpdate</row-11>
+	<row-11>Les données dupliquées sont-elles tracées et en rapport avec leur sensibilité ?</row-11>
+	<row-11>Une même donnée peut être dupliquée pour assurer les besoins de disponibilité et de sécurisation. La redondance est efficace pour sécuriser les données, mais toutes les données ne justifient pas cette précaution qui augmente les volumes de stockage et génèrent des traitements de synchronisation. Seules les données sensibles doivent être sécurisées avec des mécanismes de redondance les plus efficaces. La mise en cluster de moteurs de SGBD permet de gérer la défaillance d'un moteur. Si en plus chaque moteur utilisent des stockages redondants (Mirroring, RAID 5, ...) la même donnée à une empreinte qui peut être multipliée par 6 (le plus souvent un cluster contient 3 instances pour gérer les quorums en cas de défaillance d'un noeud).</row-11>
+	<row-11>Le dossier technique détermine les sensibilités des données et le mode de redondance à appliquer pour assurer la disponibilité requise</row-11>
+	<row-11>0</row-11>
+	<row-12>Back-end</row-12>
+	<row-12>1. Réduire l'impact des données de leur stockage et accès</row-12>
+	<row-12>Traitement de données</row-12>
+	<row-12>Les données ont-elles une date d'expiration à laquelle elles sont supprimées ?</row-12>
+	<row-12>C</row-12>
+	<row-12>B</row-12>
+	<row-12>B</row-12>
+	<row-12>**</row-12>
+	<row-12>High</row-12>
+	<row-12>Periodic</row-12>
+	<row-12>A quelle fréquence sont vérifiées les dates d'expiration ?</row-12>
+	<row-12>Les spécifications font apparaître des collections de données des procédures asynchrones ou des tâches périodiques indispensables au bon fonctionnement du service. Ces éléments sont le plus souvent invisibles et en l'absence de spécifications explicites des processus de retrait ils sont rarement pris en compte dans les fins d'exploitation d'un service. Chacun de ces éléments doit porter sa propre information de fin de vie.</row-12>
+	<row-12>Dossier technique</row-12>
+	<row-12>0</row-12>
+	<row-13>Back-end</row-13>
+	<row-13>1. Réduire l'impact des données de leur stockage et accès</row-13>
+	<row-13>Traitement de données</row-13>
+	<row-13>Est-ce que des données sensibles sont collectées et sont-elles indispensables ?</row-13>
+	<row-13>A</row-13>
+	<row-13>B</row-13>
+	<row-13>B</row-13>
+	<row-13>*</row-13>
+	<row-13>High</row-13>
+	<row-13>OnUpdate</row-13>
+	<row-13>Combien de données sont identifiées comme sensibles aux sens RGPD ?</row-13>
+	<row-13>Les données que les utilisateurs confient sont sous votre responsabilité et les utilisateurs doivent être tenus informés du soin que vous mettez en oeuvre pour assurer la confidentialité de ces données. Le RGPD impose un cadre pour les données personnelles mais ne couvre pas les autres catégories qui mériteraient les mêmes précautions. Le registre des traitements, le PIA du RGPD doivent être réalisés, mis à jour et validés par le DPO (Délégué à la Protection de Données). Les données échangées avec d'autres prestataires doivent faire l'objet d'une analyse de responsabilité. Limiter la collecte de données sensibles, au-delà du respect de l'utilisateur, réduit aussi la charge et la responsabilité d'administration de ces données personnelles</row-13>
+	<row-13>Liasse RGPD</row-13>
+	<row-13>0</row-13>
+	<row-14>Back-end</row-14>
+	<row-14>1. Réduire l'impact des données de leur stockage et accès</row-14>
+	<row-14>Traitement de données</row-14>
+	<row-14>Est-ce que les données collectées sont réellement utiles ?</row-14>
+	<row-14>B</row-14>
+	<row-14>B</row-14>
+	<row-14>B</row-14>
+	<row-14>*</row-14>
+	<row-14>High</row-14>
+	<row-14>OnUpdate</row-14>
+	<row-14>Chaque donnée est-elle associée à un traitement ?</row-14>
+	<row-14>Les données que les utilisateurs confient sont sous votre responsabilité et les utilisateurs doivent être tenus informés du soin que vous mettez en oeuvre pour assurer la confidentialité de leurs données. Le RGPD impose un cadre pour les données personnelles mais ne couvre pas les autres catégories qui mériteraient les mêmes précautions. L'empreinte des données du service se répercute tout au long du cycle de vie du service, la réduction du volume de données collectées est indispensable pour limiter ces impacts</row-14>
+	<row-14>Navigation / CHROME : network</row-14>
+	<row-14>0</row-14>
+	<row-15>Back-end</row-15>
+	<row-15>1. Réduire l'impact des données de leur stockage et accès</row-15>
+	<row-15>Traitement de données</row-15>
+	<row-15>Est-ce que l'API fournit des limites, des filtres et la liste des champs à retourner ?</row-15>
+	<row-15>B</row-15>
+	<row-15>A</row-15>
+	<row-15>B</row-15>
+	<row-15>**</row-15>
+	<row-15>High</row-15>
+	<row-15>OnUpdate</row-15>
+	<row-15>Quel volume maximum est retourné par les API ?</row-15>
+	<row-15>Les parcours et besoins des utilisateurs sont très difficilement anticipables. Une tendance consiste à fournir au front end un maximum de données pour couvrir le maximum de cas d'utilisation. Cette pratique est inefficace d'un point de vue NR car la collecte, le traitement et l'acheminement des données génèrent une charge et donc une consommation énergétique importante sans certitude que toutes ces données seront effectivement utilisées. L'empreinte du service doit être réduite en ne collectant que les données indispensables au fur et à mesure du déroulement du service via les mécanismes API.</row-15>
+	<row-15>L'analyse des codes sources, recherche les paramétrages des appels API sans définitions de limites. Les outils de développement et la console des navigateurs permettent de tracer les flux échangés, leurs volumes et fréquences (ex: CHROME : console / network)</row-15>
+	<row-15>0</row-15>
+	<row-16>Back-end</row-16>
+	<row-16>1. Réduire l'impact des données de leur stockage et accès</row-16>
+	<row-16>Sécurité</row-16>
+	<row-16>Est-ce que les données sensibles des utilisateurs sont sécurisées ?</row-16>
+	<row-16>A</row-16>
+	<row-16>B</row-16>
+	<row-16>A</row-16>
+	<row-16>**</row-16>
+	<row-16>High</row-16>
+	<row-16>OnUpdate</row-16>
+	<row-16>Quelles procédures de sécurisation sont associées aux données sensibles ?</row-16>
+	<row-16>Le RGPD impose l'établissement d'un PIA, celui-ci doit être réellement suivi et intégré dans les processus qualité. En préalable, toutes les solutions de sécurisation des données sensibles doivent être déployées et validées.</row-16>
+	<row-16>Analyse de risques</row-16>
+	<row-16>0</row-16>
+	<row-17>Back-end</row-17>
+	<row-17>2. Utiliser les composants techniques qui améliorent les aspects NR, sécurité et performance</row-17>
+	<row-17>Thématique : Qualité</row-17>
+	<row-17>Les fonctionnalités sont-elles documentées pour permettre leur réutilisation ?</row-17>
+	<row-17>B</row-17>
+	<row-17>B</row-17>
+	<row-17>B</row-17>
+	<row-17>*</row-17>
+	<row-17>Low</row-17>
+	<row-17>OnUpdate</row-17>
+	<row-17>Quelles informations de conception sont consignées pour être réutilisées dans les autres projets ?</row-17>
+	<row-17>D'une part dans une organisation les projets présentent beaucoup de similitudes, d'autre part les aspects NR adressés dans les projets sont souvent du même ordre. Afin de capitaliser sur ces éléments et bénéficier des efforts produits, il est nécessaire de s'appuyer sur un socle de connaissances stables. Toutefois la maturité d'une organisation d'un point de vue NR est amenée à progresser, il faut donc que les étapes documentées puissent aussi suivre ces évolutions et participer activement à cet accroissement de maturité. </row-17>
+	<row-17>La documentation technique intègre des éléments NR</row-17>
+	<row-17>1</row-17>
+	<row-18>Back-end</row-18>
+	<row-18>2. Utiliser les composants techniques qui améliorent les aspects NR, sécurité et performance</row-18>
+	<row-18>Performance</row-18>
+	<row-18>Est-ce que les ressources inutilisées sont bien libérées au plus vite ?</row-18>
+	<row-18>B</row-18>
+	<row-18>A</row-18>
+	<row-18>A</row-18>
+	<row-18>***</row-18>
+	<row-18>Low</row-18>
+	<row-18>OnUpdate</row-18>
+	<row-18>Les données locales sont-elles libérées dès qu'elles ne sont plus utiles ?</row-18>
+	<row-18>Les techniques de développement affranchissent les développeurs de l'allocation et la libération explicite des ressources utilisées. Néanmoins le volume des ressources est conditionné par la portée des informations et l'utilisation généralisée de données à portée globale va entraîner une surcharge de consommation qui peut conduire à un sur-dimensionnement des équipements alors qu'une utilisation plus rationnelle permettrait de s'en dispenser.</row-18>
+	<row-18>L'analyse des codes source valide la libération des ressources</row-18>
+	<row-18>0</row-18>
+	<row-19>Back-end</row-19>
+	<row-19>2. Utiliser les composants techniques qui améliorent les aspects NR, sécurité et performance</row-19>
+	<row-19>Performance</row-19>
+	<row-19>La disponibilité du service nécessite-t-elle une redondance ?</row-19>
+	<row-19>C</row-19>
+	<row-19>B</row-19>
+	<row-19>B</row-19>
+	<row-19>**</row-19>
+	<row-19>High</row-19>
+	<row-19>OnUpdate</row-19>
+	<row-19>Le SLA est-il défini ?</row-19>
+	<row-19>La redondance permet de garantir un niveau de service élevé. Cette solution nécessite beaucoup de duplications des équipements physiques, des réseaux, des stockages. Cette tolérance aux pannes est parfois justifiée par les fonctionnalités du service, et parfois va au-delà des exigences. L'adaptation du niveau de service et du besoin du service permet de réduire l'impact environnemental.</row-19>
+	<row-19>Analyse de risques</row-19>
+	<row-19>0</row-19>
+	<row-20>Back-end</row-20>
+	<row-20>2. Utiliser les composants techniques qui améliorent les aspects NR, sécurité et performance</row-20>
+	<row-20>Architecture</row-20>
+	<row-20>Les interactions entre les composants bénéficient-ils de systèmes de cache ?</row-20>
+	<row-20>B</row-20>
+	<row-20>A</row-20>
+	<row-20>B</row-20>
+	<row-20>**</row-20>
+	<row-20>High</row-20>
+	<row-20>OnUpdate</row-20>
+	<row-20>Quel système de cache est associé aux interactions entre composants ?</row-20>
+	<row-20>La réduction des volumes d'échanges, des opérations de calculs, traitements, et accès aux données est un axe d'optimisation des consommations de ressources. La mise en place de systèmes de cache permet de réduire les coûts des opérations répétitives. Les mécanismes de cache peuvent être déployés à différents points de passage dans un service. Plus le cache est proche du demandeur qu'il doit servir, plus le volume de données en transit et la longueur du chemin emprunté par les données sont faibles. Plus le cache est proche de la source de données, plus il peut être mutualisé par un nombre important d'utilisateurs mais les données seront tout de même échangées, seules les opérations de traitements et collectes seront réduites.</row-20>
+	<row-20>Le dossier technique identifie les caches et la stratégie de cache utilisée pour chaque type de flux. Les outils de gestions des caches (purge / désactivation) sont utilisés pour valider les performances effectives (ex: CHROME : console /network enable - disable cache)</row-20>
+	<row-20>0</row-20>
+	<row-21>Back-end</row-21>
+	<row-21>2. Utiliser les composants techniques qui améliorent les aspects NR, sécurité et performance</row-21>
+	<row-21>Architecture</row-21>
+	<row-21>Est-ce que le framework ou la technologie utilisée ne bloque pas les caches navigateur ?</row-21>
+	<row-21>C</row-21>
+	<row-21>B</row-21>
+	<row-21>B</row-21>
+	<row-21>**</row-21>
+	<row-21>High</row-21>
+	<row-21>OnUpdate</row-21>
+	<row-21>Le cache navigateur est-il sollicité ?</row-21>
+	<row-21>L'utilisation de certains framework notamment dans les cas d'application single page rendent difficiles la gestion du cache sur le périphérique utilisateur. Les technologies employées et les principes de développement doivent limiter ces effets parasites qui vont surcharger les besoins d'échanges alors qu'il n'y a pas lieu.</row-21>
+	<row-21>Dossier technique</row-21>
+	<row-21>0</row-21>
+	<row-22>Back-end</row-22>
+	<row-22>2. Utiliser les composants techniques qui améliorent les aspects NR, sécurité et performance</row-22>
+	<row-22>Sécurité</row-22>
+	<row-22>Est-ce que la sécurisation implémentée est justifiée au regard des opérations réalisées ?</row-22>
+	<row-22>B</row-22>
+	<row-22>B</row-22>
+	<row-22>B</row-22>
+	<row-22>**</row-22>
+	<row-22>High</row-22>
+	<row-22>OnUpdate</row-22>
+	<row-22>Chaque opération est-elle associée à une exigence de sécurisation ?</row-22>
+	<row-22>L'implémentation de sécurisation génère une empreinte environnementale supplémentaire qui doit être en rapport avec l'aspect critique de l'opération concernée, plutôt que dans un mode de généralisation du niveau de sécurisation de tout le service. Cette segmentation de niveau de sécurisation doit avoir un bénéfice global, et ne pas engendrer de surcoût d'impact.</row-22>
+	<row-22>Analyse de risques</row-22>
+	<row-22>0</row-22>
+	<row-23>Back-end</row-23>
+	<row-23>2. Utiliser les composants techniques qui améliorent les aspects NR, sécurité et performance</row-23>
+	<row-23>Traitement de données</row-23>
+	<row-23>"Est-ce que les fichiers temporaires sont inclus dans les ""logrotate"" ?"</row-23>
+	<row-23>C</row-23>
+	<row-23>B</row-23>
+	<row-23>B</row-23>
+	<row-23>*</row-23>
+	<row-23>Low</row-23>
+	<row-23>Periodic</row-23>
+	<row-23>Les suppressions automatiques des fichiers temporaires sont-elles gérées ?</row-23>
+	<row-23>Dans les processus d'exécution des fichiers temporaires sont produits. Ces fichiers inutiles, après leur utilisation très ponctuelle, doivent être supprimés des espaces de stockage. Les mécanismes de nettoyages de ces fichiers temporaires sont disponibles sur tous les systèmes d'exploitation et doivent être mis en oeuvre.</row-23>
+	<row-23>File system</row-23>
+	<row-23>0</row-23>
+	<row-24>Back-end</row-24>
+	<row-24>3. Limiter la volumétrie des échanges </row-24>
+	<row-24>Thématique : Flux</row-24>
+	<row-24>Est-ce que les données échangées sont compressées / minifiées avant transmission ?</row-24>
+	<row-24>B</row-24>
+	<row-24>A</row-24>
+	<row-24>A</row-24>
+	<row-24>*</row-24>
+	<row-24>High</row-24>
+	<row-24>OnUpdate</row-24>
+	<row-24>Quel gain est obtenu par compression ?</row-24>
+	<row-24>Les échanges indispensables doivent permettre de réduire la volumétrie des transferts. La minification des échanges, la compression des données échangées permettent de réduire ces volumes. Toutefois les opérations de compression et décompression nécessitent des exécutions de traitements qui peuvent annuler le bénéfice de la compression des échanges.</row-24>
+	<row-24>Les outils/consoles de développement et les extensions des navigateurs permettent de vérifier les bonnes pratiques (ex : CHROME - Extension greenIT / bonnes pratiques)</row-24>
+	<row-24>1</row-24>
+	<row-25>Back-end</row-25>
+	<row-25>3. Limiter la volumétrie des échanges </row-25>
+	<row-25>Flux</row-25>
+	<row-25>Est-ce que la pagination est utilisée sur les échanges de données ?</row-25>
+	<row-25>B</row-25>
+	<row-25>A</row-25>
+	<row-25>A</row-25>
+	<row-25>**</row-25>
+	<row-25>High</row-25>
+	<row-25>OnUpdate</row-25>
+	<row-25>Les volumes de données transmis sont-ils en rapport avec les capacités de présentation du périphérique utilisateur ?</row-25>
+	<row-25>Les capacité de restitution d'information des périphériques utilisateur sont limitées. D'autre part la capacité d'assimilation de données par l'utilisateur est aussi contrainte. Il serait inefficace que le volume de données transmis soit au-delà de ces limites, cela conduirait à un gaspillage de l'utilisation de ressources de traitement.</row-25>
+	<row-25>L'analyse des codes sources, recherche les paramétrages des appels API sans définitions de limites. Les outils de développement et la console des navigateurs permettent de tracer les flux échangés, leurs volumes et fréquences (ex: CHROME : console / network)</row-25>
+	<row-25>0</row-25>
+	<row-26>Back-end</row-26>
+	<row-26>3. Limiter la volumétrie des échanges </row-26>
+	<row-26>Flux</row-26>
+	<row-26>Est-ce que le nombre de requêtes entre le client et le serveur est minimisé ?</row-26>
+	<row-26>B</row-26>
+	<row-26>A</row-26>
+	<row-26>A</row-26>
+	<row-26>**</row-26>
+	<row-26>High</row-26>
+	<row-26>OnUpdate</row-26>
+	<row-26>Combien de requêtes sont nécessaires pour un parcours utilisateur ?</row-26>
+	<row-26>Les opérations réalisées sur le front end génèrent des requêtes vers les services distants. Plus le nombre de requêtes est important plus les mécanismes de traitements et d'échanges vont consommer de ressources. Le périmètre et la conception des requêtes du back end doivent permettre de limiter le nombre de requêtes.</row-26>
+	<row-26>L'analyse des codes sources, recherche des appels API. Les outils de développement et la console des navigateurs permettent de tracer les flux échangés, leurs volumes et fréquences (ex: CHROME : console / network)</row-26>
+	<row-26>0</row-26>
+	<row-27>Back-end</row-27>
+	<row-27>3. Limiter la volumétrie des échanges </row-27>
+	<row-27>Flux</row-27>
+	<row-27>Est-ce que les données échangées correspondent uniquement au besoin immédiat ?</row-27>
+	<row-27>B</row-27>
+	<row-27>B</row-27>
+	<row-27>B</row-27>
+	<row-27>**</row-27>
+	<row-27>High</row-27>
+	<row-27>OnUpdate</row-27>
+	<row-27>Les requêtes ont-elles une portée en rapport avec l'usage ?</row-27>
+	<row-27>Le périmètre et la conception des requêtes du back end doivent permettre de limiter le volume de données échangées pour satisfaire au fur et à mesure de son parcours, les besoins utilisateurs sans anticiper sur des prédictions d'usage hypothétiques.</row-27>
+	<row-27>Navigation / CHROME : network</row-27>
+	<row-27>0</row-27>
+	<row-28>Back-end</row-28>
+	<row-28>4. Utiliser des principes de développement qui réduisent les impacts</row-28>
+	<row-28>Qualité</row-28>
+	<row-28>L'analyse de code est-elle utilisée dans le processus d'intégration continue ?</row-28>
+	<row-28>B</row-28>
+	<row-28>C</row-28>
+	<row-28>A</row-28>
+	<row-28>***</row-28>
+	<row-28>High</row-28>
+	<row-28>OnUpdate</row-28>
+	<row-28>Tous les codes produits sont-ils analysés ?</row-28>
+	<row-28>La standardisation et la vérification de conformité des codes produits permet d'identifier le respect des recommandations NR et d'affiner le suivi de ces pratiques. </row-28>
+	<row-28>Intégration continue</row-28>
+	<row-28>0</row-28>
+	<row-29>Back-end</row-29>
+	<row-29>4. Utiliser des principes de développement qui réduisent les impacts</row-29>
+	<row-29>Qualité</row-29>
+	<row-29>Est-ce que les métriques de qualité du code sont suivies ?</row-29>
+	<row-29>B</row-29>
+	<row-29>C</row-29>
+	<row-29>A</row-29>
+	<row-29>***</row-29>
+	<row-29>High</row-29>
+	<row-29>Periodic</row-29>
+	<row-29>Les défauts sont-ils tracés et revus avec leurs impacts sur le NR ?</row-29>
+	<row-29>La qualité du logiciel produit à un impact direct sur les aspects NR. Les défauts entraînent de multiples livraisons de nouvelles versions successives, les anomalies entraînent des productions de traces d'anomalies importantes, et des fonctionnalités plus consommatrices de ressources techniques, parfois pour un résultat non atteint, donc des ressources ont été gaspillées pour ne produire aucun résultat.</row-29>
+	<row-29>Intégration continue</row-29>
+	<row-29>0</row-29>
+	<row-30>Back-end</row-30>
+	<row-30>5. Contrôler les aspects réglementaires</row-30>
+	<row-30>Conformité</row-30>
+	<row-30>Est-ce que l'analyse de risques (RGPD) est réalisée ?</row-30>
+	<row-30>B</row-30>
+	<row-30>C</row-30>
+	<row-30>A</row-30>
+	<row-30>***</row-30>
+	<row-30>High</row-30>
+	<row-30>OnUpdate</row-30>
+	<row-30>Le PIA est-il validé par le DPO ?</row-30>
+	<row-30>Les données que les utilisateurs confient sont sous votre responsabilité et les utilisateurs doivent être tenus informés du soin que vous mettez en oeuvre pour assurer la confidentialité de leurs données. Le registre des traitements, le PIA du RGPD doit être réalisé, mis à jour et validé par le DPO (Délégué à la Protection des Données). Les données échangées avec d'autres prestataires doivent faire l'objet d'une analyse de responsabilité. Limiter la collecte de données sensibles, au-delà du respect de l'utilisateur, réduit aussi la charge et la responsabilité d'administration de ces données personnelles</row-30>
+	<row-30>Liasse RGPD</row-30>
+	<row-30>0</row-30>
+	<row-31>Back-end</row-31>
+	<row-31>5. Contrôler les aspects réglementaires</row-31>
+	<row-31>Conformité</row-31>
+	<row-31>Est-ce que le RGAA est pris en compte ?</row-31>
+	<row-31>A</row-31>
+	<row-31>C</row-31>
+	<row-31>A</row-31>
+	<row-31>**</row-31>
+	<row-31>High</row-31>
+	<row-31>OnUpdate</row-31>
+	<row-31>Les données personnelles sont-elles identifiées ?</row-31>
+	<row-31>Le non-respect des réglementations est tout d'abord illégal et peut entraîner des pénalités importantes. Il coupe aussi des utilisateurs même hors du cadre du handicap de l'accès au service.</row-31>
+	<row-31>Audit accessibilité</row-31>
+	<row-31>0</row-31>
+	<row-32>Back-end</row-32>
+	<row-32>5. Contrôler les aspects réglementaires</row-32>
+	<row-32>Conformité</row-32>
+	<row-32>Est-ce que les données réglementées (bancaires, santé, ...)  sont sécurisées ?</row-32>
+	<row-32>B</row-32>
+	<row-32>C</row-32>
+	<row-32>A</row-32>
+	<row-32>**</row-32>
+	<row-32>High</row-32>
+	<row-32>OnUpdate</row-32>
+	<row-32>Est-ce que le système de paiement est conforme aux normes de sécurité en vigueur ?</row-32>
+	<row-32>Le cadre réglementaire de certaines catégories de données est très strict. Le respect de ces données pour protéger les utilisateurs est un critère important. Il est indispensable que dans le processus de développement aucune brèche ne soit possible et que toutes les interopérabilités avec les mécanismes standards de ces domaines soient validées.</row-32>
+	<row-32>Analyse de risques</row-32>
+	<row-32>0</row-32>
+	<row-33>Back-end</row-33>
+	<row-33>5. Contrôler les aspects réglementaires</row-33>
+	<row-33>Conformité</row-33>
+	<row-33>Le service en cours de conception est-il conforme aux évolutions de la société et de la législation ?</row-33>
+	<row-33>B</row-33>
+	<row-33>B</row-33>
+	<row-33>B</row-33>
+	<row-33>***</row-33>
+	<row-33>Low</row-33>
+	<row-33>OnUpdate</row-33>
+	<row-33>Le service juridique est-il consulté ?</row-33>
+	<row-33>Au-delà des aspects purement réglementaires, l'anticipation de la prise en compte de l'évolution des attentes sociétales est nécessaire pour assurer une couverture de ce sujet durant toute la durée de vie du service. Anticiper les futurs points de règlement et normes permet de pérenniser le service en limitant les besoins de mises à jour dictées par l'environnement légal. </row-33>
+	<row-33>Analyse de risques</row-33>
+	<row-33>0</row-33>
+	<row-34>Back-end</row-34>
+	<row-34>5. Contrôler les aspects réglementaires</row-34>
+	<row-34>Conformité</row-34>
+	<row-34>Le fournisseur d'infrastructures est-il en mesure d'exposer ses métriques environnementales ?</row-34>
+	<row-34>B</row-34>
+	<row-34>A</row-34>
+	<row-34>A</row-34>
+	<row-34>*</row-34>
+	<row-34>High</row-34>
+	<row-34>Periodic</row-34>
+	<row-34>Quelles métriques sont collectées ?</row-34>
+	<row-34>Dans les dimensions NR, les aspects humains, environnementaux et économiques occupent une place importante. S'assurer que tous les intervenants y compris chez les prestataires (et ses propres sous-traitants et fournisseurs) utilisés pour le projet disposent des mêmes attentions NR est nécessaire pour que la cohérence des efforts NR ne soit pas anéantie par un choix qui aurait pu être évité.</row-34>
+	<row-34>Les procédures d'achat référencent les stratégies NR que doivent prendre en compte les fournisseurs.</row-34>
+	<row-34>0</row-34>
+	<row-35>Back-end</row-35>
+	<row-35>6. Mettre en place une méthodologie qui favorise la prise en compte des aspects NR</row-35>
+	<row-35>Thématique : Cycle de vie</row-35>
+	<row-35>Est-ce que la fonctionnalité envisagée est utile ?</row-35>
+	<row-35>B</row-35>
+	<row-35>A</row-35>
+	<row-35>A</row-35>
+	<row-35>*</row-35>
+	<row-35>High</row-35>
+	<row-35>Periodic</row-35>
+	<row-35>Chaque fonctionnalité est-elle associée à un usage identifié ?</row-35>
+	<row-35>La sélection des fonctionnalités jugées indispensables peuvent être remises en cause dans leur forme initiale par rapport à leur impact NR. Dans ce cas, les coûts / bénéfices devront prendre en compte ces oppositions et faire l'objet d'adaptation pour faire converger les 2 approches : nécessité fonctionnelle et impact NR.</row-35>
+	<row-35>Des données sont identifiées et collectées (analytics / sondes) en production pour identifier les usages et les fonctionnalités superflues.  </row-35>
+	<row-35>1</row-35>
+	<row-36>Back-end</row-36>
+	<row-36>6. Mettre en place une méthodologie qui favorise la prise en compte des aspects NR</row-36>
+	<row-36>Architecture</row-36>
+	<row-36>Le dimensionnement des ressources d'infrastructures suit-il la vie de l'application ?</row-36>
+	<row-36>B</row-36>
+	<row-36>B</row-36>
+	<row-36>A</row-36>
+	<row-36>**</row-36>
+	<row-36>Medium</row-36>
+	<row-36>Periodic</row-36>
+	<row-36>La métrologie est-elle définie et mise en place ?</row-36>
+	<row-36>Le taux d'utilisation des ressources physiques de l'infrastructure doit être suivi pour permettre une meilleure utilisation des matériels disponibles et éviter de déployer des éléments supplémentaires lorsque le taux d'utilisation n'est pas complet. </row-36>
+	<row-36>Suivi de configuration</row-36>
+	<row-36>0</row-36>
+	<row-37>Back-end</row-37>
+	<row-37>6. Mettre en place une méthodologie qui favorise la prise en compte des aspects NR</row-37>
+	<row-37>Architecture</row-37>
+	<row-37>Est-ce que l'architecture technique est en permanence en rapport avec l'activité du service ?</row-37>
+	<row-37>C</row-37>
+	<row-37>A</row-37>
+	<row-37>A</row-37>
+	<row-37>**</row-37>
+	<row-37>High</row-37>
+	<row-37>Periodic</row-37>
+	<row-37>Le suivi des indicateurs d'activité sont-ils en relation avec des actions d'optimisation ?</row-37>
+	<row-37>Le suivi des taux utilisations doit aussi permettre de réduire la taille de l'infrastructure lorsqu'elle est sur-dimensionnée par rapport au besoin.</row-37>
+	<row-37>Le suivi de production met en oeuvre des indicateurs d'utilisation des ressources techniques</row-37>
+	<row-37>0</row-37>
+	<row-38>Back-end</row-38>
+	<row-38>6. Mettre en place une méthodologie qui favorise la prise en compte des aspects NR</row-38>
+	<row-38>Architecture</row-38>
+	<row-38>Est-ce que les opérations de dé-provisionnement sont exprimées lors de la conception ?</row-38>
+	<row-38>C</row-38>
+	<row-38>A</row-38>
+	<row-38>A</row-38>
+	<row-38>**</row-38>
+	<row-38>Medium</row-38>
+	<row-38>OnUpdate</row-38>
+	<row-38>Les processus de dé-provisionnement sont-ils décrits ?</row-38>
+	<row-38>Lors de la conception, chaque partie composant le projet peut être amenée à avoir une durée de vie différente. Il est important que l'ensemble des procédures de fin de vie soient exprimées pour que l'empreinte des composants inutilisés et arrêtés soient nulle.</row-38>
+	<row-38>La gestion de configuration permet de préciser les règles de provisionnemnent / dé-provisionnement en fonction de seuils</row-38>
+	<row-38>0</row-38>
+	<row-39>Back-end</row-39>
+	<row-39>6. Mettre en place une méthodologie qui favorise la prise en compte des aspects NR</row-39>
+	<row-39>Architecture</row-39>
+	<row-39>L'ensemble des équipements techniques utilisés par le service sont-ils identifiés ?</row-39>
+	<row-39>C</row-39>
+	<row-39>A</row-39>
+	<row-39>A</row-39>
+	<row-39>*</row-39>
+	<row-39>High</row-39>
+	<row-39>Periodic</row-39>
+	<row-39>Les certifications de chaque équipement sont-elles disponibles ?</row-39>
+	<row-39>La conception, le développement, les tests, la production, la gestion de disponibilité sont des étapes qui vont utiliser des ressources techniques. Chacune de ces ressources doit être identifiée et ses caractéristiques répertoriées. </row-39>
+	<row-39>La gestion de configuration permet de référencer tous les équipements liés au service</row-39>
+	<row-39>0</row-39>
+	<row-40>Back-end</row-40>
+	<row-40>6. Mettre en place une méthodologie qui favorise la prise en compte des aspects NR</row-40>
+	<row-40>Architecture</row-40>
+	<row-40>Pour chaque équipement, les caractéristiques sont-elles disponibles ?</row-40>
+	<row-40>B</row-40>
+	<row-40>A</row-40>
+	<row-40>B</row-40>
+	<row-40>*</row-40>
+	<row-40>Low</row-40>
+	<row-40>Periodic</row-40>
+	<row-40>Les critères de renouvellement des équipements prennent-ils en compte les impacts NR ?</row-40>
+	<row-40>La position de l'équipement dans son cycle de vie et son impact environnemental doivent être connus pour utiliser au mieux les équipements disponibles.</row-40>
+	<row-40>La gestion de configuration permet de référencer tous les équipements liés au service</row-40>
+	<row-40>0</row-40>
+	<row-41>Back-end</row-41>
+	<row-41>6. Mettre en place une méthodologie qui favorise la prise en compte des aspects NR</row-41>
+	<row-41>Cycle de vie</row-41>
+	<row-41>Chacune des phases du cycle de vie sont-elles identifiées avec des actions spécifiques ?</row-41>
+	<row-41>B</row-41>
+	<row-41>B</row-41>
+	<row-41>B</row-41>
+	<row-41>**</row-41>
+	<row-41>Low</row-41>
+	<row-41>Periodic</row-41>
+	<row-41>A quelle fréquence ces actions sont-elles revues ?</row-41>
+	<row-41>La démarche ACV est une base de la prise en compte du NR dans la conception des services numériques, elle permet d'associer des actions à chaque étape du cycle de vie.</row-41>
+	<row-41>Analyse d'impact</row-41>
+	<row-41>0</row-41>
+	<row-42>Back-end</row-42>
+	<row-42>6. Mettre en place une méthodologie qui favorise la prise en compte des aspects NR</row-42>
+	<row-42>Cycle de vie</row-42>
+	<row-42>Les données ACV sont-elles réutilisées dans le cas d'une adaptation d'un service existant ?</row-42>
+	<row-42>B</row-42>
+	<row-42>C</row-42>
+	<row-42>B</row-42>
+	<row-42>**</row-42>
+	<row-42>Low</row-42>
+	<row-42>OnUpdate</row-42>
+	<row-42>Avez-vous mis à disposition des équipes projet les ACV précédentes ?</row-42>
+	<row-42>Les analyses ACV peuvent être réalisées sur des services existants afin de les rendre plus efficaces dans le cas d'une refonte ou adaptation d'un service existant.</row-42>
+	<row-42>ACV</row-42>
+	<row-42>0</row-42>
+	<row-43>Contenus</row-43>
+	<row-43>1. Appliquer une démarche éditoriale pour les contenus</row-43>
+	<row-43>Thématique : </row-43>
+	<row-43>Les balises de mise en forme de texte répondent-elles au besoin de hiérarchisation des informations, et pas à des mises en valeur de présentation ?</row-43>
+	<row-43>B</row-43>
+	<row-43>B</row-43>
+	<row-43>C</row-43>
+	<row-43>*</row-43>
+	<row-43>Medium</row-43>
+	<row-43>OnUpdate</row-43>
+	<row-43>N'utilisez vous pas des balises H pour mettre en évidence du texte ? </row-43>
+	<row-43>Les automates et assistants d'accessibilité utilisent les balises pour se repérer et structurer la restitution. L'emploi de balises ne correspondant pas à la structure du contenu, par exemple pour des mises en forme de texte, rendent l'utilisation de ces assistants plus difficiles pour une bonne compréhension du contenu.</row-43>
+	<row-43>L'analyse des codes sources permet de vérifier l'utilisation des balises HTML</row-43>
+	<row-43>1</row-43>
+	<row-44>Contenus</row-44>
+	<row-44>1. Appliquer une démarche éditoriale pour les contenus</row-44>
+	<row-44>Images</row-44>
+	<row-44>Quels sont les droits d'utilisation des images, vidéos, illustrations et textes de mon site ?</row-44>
+	<row-44>B</row-44>
+	<row-44>C</row-44>
+	<row-44>B</row-44>
+	<row-44>*</row-44>
+	<row-44>Medium</row-44>
+	<row-44>OnUpdate</row-44>
+	<row-44>Avez-vous une liste exhaustive et à jour des crédits ?</row-44>
+	<row-44>Avez-vous une liste exhaustive et à jour des crédits ?</row-44>
+	<row-44>Projet</row-44>
+	<row-44>0</row-44>
+	<row-45>Contenus</row-45>
+	<row-45>2. Réduire l'empreinte des contenus statiques</row-45>
+	<row-45>Thématique : Images</row-45>
+	<row-45>Est-ce  que les images ont été compressées en amont dans un format adapté pour sa visualisation ?</row-45>
+	<row-45>B</row-45>
+	<row-45>A</row-45>
+	<row-45>B</row-45>
+	<row-45>*</row-45>
+	<row-45>High</row-45>
+	<row-45>OnUpdate</row-45>
+	<row-45>Chaque image utilise-t-elle un format  standard du web et propose une alternative pour certains formats optimisés qui ne seraient pas disponibles sur tous les environnements ?</row-45>
+	<row-45>La transmission de données compressées est indispensable pour réduire l'impact des échanges, en revanche les algorithmes de compression sont consommateurs de ressources techniques de traitement, de stockage intermédiaire. Lorsque les compressions sont effectuées à chaque demande d'échange, le bénéfice de la compression peut disparaître ou même augmenter l'impact.</row-45>
+	<row-45>Les outils/consoles de développement et les extensions des navigateurs permettent de vérifier les bonnes pratiques (ex : CHROME - Extension greenIT / bonnes pratiques)</row-45>
+	<row-45>1</row-45>
+	<row-46>Contenus</row-46>
+	<row-46>3. Eviter les contenus actifs, conserver les contenus dynamiques sous contrôle de l'utilisateur</row-46>
+	<row-46>Thématique : Vidéos</row-46>
+	<row-46>Est-ce que l'information portée par la vidéo peut être remplacée par une alternative (infographie...) ?</row-46>
+	<row-46>B</row-46>
+	<row-46>A</row-46>
+	<row-46>B</row-46>
+	<row-46>*</row-46>
+	<row-46>High</row-46>
+	<row-46>OnUpdate</row-46>
+	<row-46>Combien de vidéos avez-vous transformé, par exemple en infographie qui réduit l'impact NR ?</row-46>
+	<row-46>Les informations apportées par la vidéo sont souvent transposables de manière à être proposées sous forme statique, nettement moins consommatrices de ressources.</row-46>
+	<row-46>Les vidéos portent des méta-datas permettant de valider la pertinence du contenu et de le restituer sous une autre forme </row-46>
+	<row-46>1</row-46>
+	<row-47>Contenus</row-47>
+	<row-47>5. Assurer la liaison entre les contenus et usages</row-47>
+	<row-47>Thématique : Téléchargements</row-47>
+	<row-47>Les documents à télécharger sont-ils compressés, optimisés et accessibles ?</row-47>
+	<row-47>C</row-47>
+	<row-47>A</row-47>
+	<row-47>A</row-47>
+	<row-47>*</row-47>
+	<row-47>High</row-47>
+	<row-47>OnUpdate</row-47>
+	<row-47>Tous vos documents sont-ils compressés ?</row-47>
+	<row-47>Les documents disponibles pour l'utilisateur dans le service doivent être compressés pour réduire les impacts liés aux transferts de ces données.</row-47>
+	<row-47>Les tests de navigation / parcours utilisateur couvrent les téléchargements, les outils de développement des navigateurs permettent de suivre les volumes de données (ex:  CHROME - network)</row-47>
+	<row-47>1</row-47>
+	<row-48>Contenus</row-48>
+	<row-48>5. Assurer la liaison entre les contenus et usages</row-48>
+	<row-48>Liens hypertexte</row-48>
+	<row-48>A t-on vérifié que les urls de destination sont bien valides ?</row-48>
+	<row-48>B</row-48>
+	<row-48>B</row-48>
+	<row-48>B</row-48>
+	<row-48>*</row-48>
+	<row-48>Low</row-48>
+	<row-48>Periodic</row-48>
+	<row-48>A quelle fréquence contrôlez-vous les liens ?</row-48>
+	<row-48>Les contenus utilisent des références externes plutôt que de dupliquer des informations. Chaque lien est susceptible d'être activé et générera une requête réseau, elle doit donc être valide. Dans le cas contraire, l'utilisateur risque de ne pas comprendre la source de l'erreur et générer de multiples tentatives infructueuses avec l'utilisation de ressources techniques sans aucun résultat.</row-48>
+	<row-48>Navigation / parcours utilisateur</row-48>
+	<row-48>0</row-48>
+	<row-49>Front-end</row-49>
+	<row-49>1. Valider le périmètre et la couverture fonctionnelle du projet</row-49>
+	<row-49>User Experience</row-49>
+	<row-49>Est-ce que les fonctions proposées sont bien en rapport avec un usage ?</row-49>
+	<row-49>A</row-49>
+	<row-49>A</row-49>
+	<row-49>A</row-49>
+	<row-49>**</row-49>
+	<row-49>High</row-49>
+	<row-49>OnUpdate</row-49>
+	<row-49>Toutes les fonctionnalités sont-elles validées par un usage décrit par le métier ?</row-49>
+	<row-49>Derrière chaque fonctionnalité il y a du code, des échanges, des données. Si certaines fonctions ne correspondent pas à un vrai besoin, des ressources sont gaspillées en vain.</row-49>
+	<row-49>Les solutions d'analytics / sondes sont mises en oeuvre et optimisées pour valider les utilisations des fonctionnalités</row-49>
+	<row-49>0</row-49>
+	<row-50>Front-end</row-50>
+	<row-50>1. Valider le périmètre et la couverture fonctionnelle du projet</row-50>
+	<row-50>Standards de développement</row-50>
+	<row-50>Utilisez-vous des standards de développement éprouvés ?</row-50>
+	<row-50>B</row-50>
+	<row-50>C</row-50>
+	<row-50>A</row-50>
+	<row-50>**</row-50>
+	<row-50>High</row-50>
+	<row-50>Periodic</row-50>
+	<row-50>Quels sont les standards de référence utilisés (ISO/RFC/IEC) ?</row-50>
+	<row-50>Les meilleurs standards de développement couvrent une grande partie des attentes du NR sur les aspects de fiabilité, de réutilisation, validation des codes produits, ainsi que l'utilisabilité par différentes catégories de publics. L'adoption et le respect de ces standards donne une base solide pour construire en appliquant les démarches NR qui sont hors du périmètre de ces méthodes et outils.</row-50>
+	<row-50>Développement</row-50>
+	<row-50>0</row-50>
+	<row-51>Front-end</row-51>
+	<row-51>1. Valider le périmètre et la couverture fonctionnelle du projet</row-51>
+	<row-51>Standards de développement</row-51>
+	<row-51>Les données ACV sont-elles réutilisées dans le cas d'une adaptation d'un service existant ?</row-51>
+	<row-51>B</row-51>
+	<row-51>A</row-51>
+	<row-51>B</row-51>
+	<row-51>**</row-51>
+	<row-51>Low</row-51>
+	<row-51>OnUpdate</row-51>
+	<row-51>Avez-vous mis à disposition des équipes projet les ACV précédentes ?</row-51>
+	<row-51>Les analyses ACV peuvent être réalisées sur des services existants afin de les rendre plus efficaces dans le cas d'une refonte ou adaptation d'un service existant, les spécifications et exigences NR issues des ACV précédentes doivent être reprises et adaptées si besoin.</row-51>
+	<row-51>"Une ACV minimale (""screening"") est disponible pour le service existant"</row-51>
+	<row-51>0</row-51>
+	<row-52>Front-end</row-52>
+	<row-52>2. Fédérer les équipes et le public cible</row-52>
+	<row-52>Standards de développement</row-52>
+	<row-52>Le public cible du service est-il déterminé vis-à-vis de ses capacités d'utilisation du service ?</row-52>
+	<row-52>B</row-52>
+	<row-52>B</row-52>
+	<row-52>B</row-52>
+	<row-52>**</row-52>
+	<row-52>Medium</row-52>
+	<row-52>OnUpdate</row-52>
+	<row-52>Les objectifs NR sont-ils qualifiés pour chaque profil cible?</row-52>
+	<row-52>La finalité du développement est dépendante des publics utilisateurs cibles. Les choix d'implémentation ont une forte conséquence sur la capacité d'utilisation du service. Les équipes de développement sont souvent éloignées des cas d'usage réels, il est indispensable de reconstruire cette proximité pour que tous les publics utilisateurs soient inclus.</row-52>
+	<row-52>Fiche de cadrage</row-52>
+	<row-52>0</row-52>
+	<row-53>Front-end</row-53>
+	<row-53>3. Utiliser les environnements et outils qui permettent de limiter les impacts</row-53>
+	<row-53>Thématique : API</row-53>
+	<row-53>Est-ce que les fonctionnalités couvertes par des actions locales (côté client) sont privilégiées plutôt que des échanges API ?</row-53>
+	<row-53>C</row-53>
+	<row-53>B</row-53>
+	<row-53>B</row-53>
+	<row-53>*</row-53>
+	<row-53>High</row-53>
+	<row-53>OnUpdate</row-53>
+	<row-53>L'utilisation d'API externes est-elle limitée (si possible) ?</row-53>
+	<row-53>Les charges introduites par la sollicitation de ressources distantes via des mécanismes API peuvent être importantes. Certaines fonctionnalités pourraient être couvertes par des actions locales plutôt que distantes ce qui réduit la volumétrie des échanges et le nombre de composants mis en oeuvre, donc réduit l'impact environnemental. En revanche, il ne faut pas que le traitement en local d'une fonctionnalité qui peut nécessiter de nouvelles dépendances techniques, alourdisse la charge sur le front end.</row-53>
+	<row-53>Les tests de navigation / parcours utilisateur couvrent les accès API, les outils de développement des navigateurs permettent de suivre les volumes de données (ex:  CHROME - network)</row-53>
+	<row-53>1</row-53>
+	<row-54>Front-end</row-54>
+	<row-54>3. Utiliser les environnements et outils qui permettent de limiter les impacts</row-54>
+	<row-54>API</row-54>
+	<row-54>Est-ce que les fonctionnalités couvertes par des actions locales (côté client) sont privilégiées plutôt que des échanges API ?</row-54>
+	<row-54>C</row-54>
+	<row-54>B</row-54>
+	<row-54>B</row-54>
+	<row-54>*</row-54>
+	<row-54>High</row-54>
+	<row-54>OnUpdate</row-54>
+	<row-54>L'utilisation d'API externes est-elle limitée (si possible) ?</row-54>
+	<row-54>Les charges introduites par la sollicitation de ressources distantes via des mécanismes API peuvent être importantes. Certaines fonctionnalités pourraient être couvertes par des actions locales plutôt que distantes ce qui réduit la volumétrie des échanges et le nombre de composants mis en oeuvre, donc réduit l'impact environnemental. En revanche, il ne faut pas que le traitement en local d'une fonctionnalité qui peut nécessiter de nouvelles dépendances techniques, alourdisse la charge sur le front end.</row-54>
+	<row-54>Les tests de navigation / parcours utilisateur couvrent les accès API, les outils de développement des navigateurs permettent de suivre les volumes de données (ex:  CHROME - network)</row-54>
+	<row-54>0</row-54>
+	<row-55>Front-end</row-55>
+	<row-55>3. Utiliser les environnements et outils qui permettent de limiter les impacts</row-55>
+	<row-55>Flux </row-55>
+	<row-55>Utilisez vous les mécanismes de cache pour limiter les échanges ?</row-55>
+	<row-55>C</row-55>
+	<row-55>A</row-55>
+	<row-55>B</row-55>
+	<row-55>**</row-55>
+	<row-55>High</row-55>
+	<row-55>OnUpdate</row-55>
+	<row-55>Est-ce que les mécanismes de caches sont en place : pas de directive no-cache, cache navigateur, cache API ?</row-55>
+	<row-55>La réduction des volumes d'échanges, des opérations de calculs, traitements, et accès aux données est un axe d'optimisation des consommations de ressources. La mise en place de systèmes de cache permet de réduire les coûts des opérations répétitives. Les mécanismes de cache peuvent être déployés à différents points de passage dans un service. Plus le cache est proche du demandeur qu'il doit servir, plus le volume de données en transit et la longueur du chemin emprunté par les données sont faibles. Plus le cache est proche de la source de données, plus il peut être mutualisé par un nombre important d'utilisateurs mais les données seront tout de même échangées, seules les opérations de traitement et collecte seront réduites.</row-55>
+	<row-55>Le dossier technique identifie les caches et la stratégie de cache utilisée pour chaque type de flux. Les outils de gestions des caches (purge / désactivation) sont utilisés pour valider les performances effectives (ex: CHROME : console /network enable - disable cache)</row-55>
+	<row-55>0</row-55>
+	<row-56>Front-end</row-56>
+	<row-56>3. Utiliser les environnements et outils qui permettent de limiter les impacts</row-56>
+	<row-56>API</row-56>
+	<row-56>Est-ce que les données remontées par les API sont bien uniquement celles dont l'application a besoin au moment où elles sont demandées ?</row-56>
+	<row-56>C</row-56>
+	<row-56>A</row-56>
+	<row-56>B</row-56>
+	<row-56>**</row-56>
+	<row-56>High</row-56>
+	<row-56>OnUpdate</row-56>
+	<row-56>Les volumes de données transmis sont-ils en rapport avec les capacités de présentation du périphérique utilisateur ?</row-56>
+	<row-56>Les parcours et besoins des utilisateurs sont très difficilement anticipables. Une tendance consiste à collecter sur le front end un maximum de données pour couvrir le maximum de cas d'utilisation. Cette pratique est inefficace d'un point de vue NR car la collecte, le traitement, l'acheminement, le stockage local des données génère une charge et donc une consommation énergétique importante sans certitude que toutes ces données seront effectivement utilisées. L'empreinte du service doit être réduite en ne collectant que les données indispensables au fur et à mesure du déroulement du service via les mécanismes API.</row-56>
+	<row-56>Les outils de développement et consoles des navigateurs sont utilisés pour suivre les échanges API (ex: CHROME : console network)</row-56>
+	<row-56>0</row-56>
+	<row-57>Front-end</row-57>
+	<row-57>3. Utiliser les environnements et outils qui permettent de limiter les impacts</row-57>
+	<row-57>Technologie</row-57>
+	<row-57>Les bibliothèques utilisées permettent-elles de ne prendre que les composants effectivement utiles ?</row-57>
+	<row-57>B</row-57>
+	<row-57>A</row-57>
+	<row-57>B</row-57>
+	<row-57>***</row-57>
+	<row-57>High</row-57>
+	<row-57>OnUpdate</row-57>
+	<row-57>Comment sont tracés les composants utilisés ?</row-57>
+	<row-57>Bien souvent les composants issus de bibliothèques publiques (open source ou commerciales) apportent un ensemble de fonctionnalités qui ne sont que rarement toutes utilisées et drainent des dépendances vis-à -is d'autres composants avec les mêmes caractéristiques. Au final le projet agrège un volume de bibliothèque important alors qu'une petite partie est réellement utilisée. Privilégier les composants dont les dépendances et fonctionnalités sont pilotables par rapport aux besoins est efficace du point de vue NR.</row-57>
+	<row-57>Le dossier technique identifie les dépendances de composants et précise les éléments pouvant être supprimés.</row-57>
+	<row-57>0</row-57>
+	<row-58>Front-end</row-58>
+	<row-58>3. Utiliser les environnements et outils qui permettent de limiter les impacts</row-58>
+	<row-58>Technologie</row-58>
+	<row-58>Les dépendances non utilisées sont-elles identifiées et retirées ?</row-58>
+	<row-58>C</row-58>
+	<row-58>A</row-58>
+	<row-58>B</row-58>
+	<row-58>***</row-58>
+	<row-58>High</row-58>
+	<row-58>OnUpdate</row-58>
+	<row-58>Quel outil utilisez-vous pour tracer les dépendances ?</row-58>
+	<row-58>Les arbres de dépendance donnent la cartographie des composants et leurs relations. Un arbre de dépendance le plus réduit possible est efficace car il réduit les volumes de code, mais cela ne présume pas que chaque branche de cet arbre de dépendance est justifiée par une utilisation effective.</row-58>
+	<row-58>Les outils de développement et la console des navigateurs permettent de tracer les dépendances chargées mais inutilisées (ex: CHROME : console / coverage)</row-58>
+	<row-58>0</row-58>
+	<row-59>Front-end</row-59>
+	<row-59>3. Utiliser les environnements et outils qui permettent de limiter les impacts</row-59>
+	<row-59>Technologie</row-59>
+	<row-59>Est-ce que la fonctionnalité attendue ne pourrait pas être mise en place avec les capacités natives du navigateur ?</row-59>
+	<row-59>B</row-59>
+	<row-59>B</row-59>
+	<row-59>B</row-59>
+	<row-59>**</row-59>
+	<row-59>High</row-59>
+	<row-59>OnUpdate</row-59>
+	<row-59>Quelles fonctionnalités sont ré-écrites car la fonctionnalité système native ne couvre pas l'intégralité du besoin ?</row-59>
+	<row-59>Certaines fonctionnalités sont disponibles sous plusieurs formes. Lorsqu'elles sont natives, aucun code ou composants supplémentaires ne sont nécessaires pour les utiliser ce qui réduit l'impact du service.</row-59>
+	<row-59>Dossier technique</row-59>
+	<row-59>0</row-59>
+	<row-60>Front-end</row-60>
+	<row-60>3. Utiliser les environnements et outils qui permettent de limiter les impacts</row-60>
+	<row-60>Technologie</row-60>
+	<row-60>L'ensemble des équipements techniques utilisés par le service sont-ils identifiés ?</row-60>
+	<row-60>B</row-60>
+	<row-60>B</row-60>
+	<row-60>B</row-60>
+	<row-60>*</row-60>
+	<row-60>Medium</row-60>
+	<row-60>OnUpdate</row-60>
+	<row-60>Les certifications de chaque équipement sont-elles disponibles ?</row-60>
+	<row-60>La conception, le développement, les tests, la production, la gestion de disponibilité sont des étapes qui vont utiliser des ressources techniques. Chacune de ces ressources doit être identifiée et ses caractéristiques répertoriées.</row-60>
+	<row-60>Gestion de  configuration</row-60>
+	<row-60>0</row-60>
+	<row-61>Front-end</row-61>
+	<row-61>4. Réduire les effets d'obsolescence</row-61>
+	<row-61>Thématique : User expérience </row-61>
+	<row-61>La plage de rétro-compatibilité est-elle définie ?</row-61>
+	<row-61>B</row-61>
+	<row-61>A</row-61>
+	<row-61>B</row-61>
+	<row-61>*</row-61>
+	<row-61>High</row-61>
+	<row-61>Periodic</row-61>
+	<row-61>La liste des équipements est-elle mise à jour ?</row-61>
+	<row-61>Les équipements utilisateurs sont de plus en plus performants. Lorsque les services numériques exploitent toutes les capacités des équipements, cela écarte certains publics qui ne disposent pas des même outils performants. Cela empêche aussi d'aborder la fourniture des fonctionnalités avec des moyens moins gourmands en ressources mais procurant le même résultat.</row-61>
+	<row-61>Chaque élément référencé dans le Dossier Technique porte une information de degrés de compatibilité</row-61>
+	<row-61>1</row-61>
+	<row-62>Front-end</row-62>
+	<row-62>4. Réduire les effets d'obsolescence</row-62>
+	<row-62>User expérience </row-62>
+	<row-62>La plage de rétro-compatibilité est-elle définie ?</row-62>
+	<row-62>B</row-62>
+	<row-62>A</row-62>
+	<row-62>B</row-62>
+	<row-62>*</row-62>
+	<row-62>High</row-62>
+	<row-62>Periodic</row-62>
+	<row-62>La liste des équipements est-elle mise à jour ?</row-62>
+	<row-62>Les équipements utilisateurs sont de plus en plus performants. Lorsque les services numériques exploitent toutes les capacités des équipements, cela écarte certains publics qui ne disposent pas des même outils performants. Cela empêche aussi d'aborder la fourniture des fonctionnalités avec des moyens moins gourmands en ressources mais procurant le même résultat.</row-62>
+	<row-62>Chaque élément référencé dans le Dossier Technique porte une information de degrés de compatibilité</row-62>
+	<row-62>0</row-62>
+	<row-63>Front-end</row-63>
+	<row-63>4. Réduire les effets d'obsolescence</row-63>
+	<row-63>User expérience </row-63>
+	<row-63>Est-ce que les équipements plus anciens resteront compatibles, et dans quelles limites ?</row-63>
+	<row-63>A</row-63>
+	<row-63>A</row-63>
+	<row-63>B</row-63>
+	<row-63>**</row-63>
+	<row-63>Medium</row-63>
+	<row-63>OnUpdate</row-63>
+	<row-63>Est-ce qu'il y a un mode dégradé pour les autres navigateurs ?</row-63>
+	<row-63>Le secteur d'activité et le profil des utilisateurs permet le plus souvent de qualifier le parc matériel qui sera employé pour le service. Les matériels sont déterminés par leurs capacités techniques (puissance de calcul, mémoire, capacité réseau, capteurs, taille et qualité d'écran) mais aussi par les systèmes d'exploitation qu'ils peuvent accueillir. Chaque contrainte que le service impose réduit le nombre de postes qui pourront l'utiliser et donc exclut des publics. La mise en oeuvre de solutions alternatives permet de conserver un fonctionnement efficace sur des périphériques anciens qui conservent une bonne utilisabilité et de ne pas exclure d'utilisateurs</row-63>
+	<row-63>L'analyse d'impact détermine les enjeux et risques de mise en obsolescence d'équipements</row-63>
+	<row-63>0</row-63>
+	<row-64>Front-end</row-64>
+	<row-64>5. Implémenter et développer les fonctionnalités pour limiter les impacts</row-64>
+	<row-64>Thématique : Standards de développement</row-64>
+	<row-64>Les fonctionnalités du service ne vont-elles pas au-delà des besoins utilisateurs ?</row-64>
+	<row-64>A</row-64>
+	<row-64>A</row-64>
+	<row-64>A</row-64>
+	<row-64>*</row-64>
+	<row-64>High</row-64>
+	<row-64>OnUpdate</row-64>
+	<row-64>Chaque fonctionnalité est-elle retirée si elle n'est pas en relation avec un usage défini ?</row-64>
+	<row-64>Le nombre de fonctionnalités disponibles dans un service numérique impactent directement la consommation de ressources et l'impact environnemental. En créant des fonctionnalités de peu d'utilité ce sont des sources de création de dettes environnementales totalement inutiles. Les fonctionnalités augmentent aussi le volume du service, qui introduisent des délais de chargements et des espaces de stockage supplémentaires.</row-64>
+	<row-64>Des données sont identifiées et collectées (analytics / sondes) en production pour identifier les usages et les fonctionnalités superflues.  </row-64>
+	<row-64>1</row-64>
+	<row-65>Front-end</row-65>
+	<row-65>5. Implémenter et développer les fonctionnalités pour limiter les impacts</row-65>
+	<row-65>Standards de développement</row-65>
+	<row-65>Les fonctionnalités du service ne vont-elles pas au-delà des besoins utilisateurs ?</row-65>
+	<row-65>A</row-65>
+	<row-65>A</row-65>
+	<row-65>A</row-65>
+	<row-65>*</row-65>
+	<row-65>High</row-65>
+	<row-65>OnUpdate</row-65>
+	<row-65>Chaque fonctionnalité est-elle retirée si elle n'est pas en relation avec un usage défini ?</row-65>
+	<row-65>Le nombre de fonctionnalités disponibles dans un service numérique impactent directement la consommation de ressources et l'impact environnemental. En créant des fonctionnalités de peu d'utilité ce sont des sources de création de dettes environnementales totalement inutiles. Les fonctionnalités augmentent aussi le volume du service, qui introduisent des délais de chargements et des espaces de stockage supplémentaires.</row-65>
+	<row-65>Des données sont identifiées et collectées (analytics / sondes) en production pour identifier les usages et les fonctionnalités superflues.  </row-65>
+	<row-65>0</row-65>
+	<row-66>Front-end</row-66>
+	<row-66>5. Implémenter et développer les fonctionnalités pour limiter les impacts</row-66>
+	<row-66>User Experience</row-66>
+	<row-66>Les éléments de références sont-ils connus, tenus à jour, et mis à disposition de l'ensemble de l'équipe projet ?</row-66>
+	<row-66>B</row-66>
+	<row-66>C</row-66>
+	<row-66>B</row-66>
+	<row-66>*</row-66>
+	<row-66>Medium</row-66>
+	<row-66>OnUpdate</row-66>
+	<row-66>Comment est évalué le degré de conformité ?</row-66>
+	<row-66>Le cadrage des opérations de développement nécessite un socle de référentiels qui soient connus, adoptés et validés par l'ensemble des équipes techniques. Ces références doivent évoluer en fonction des avancées de l'état de l'art pour rester à la pointe des pratiques autant techniques que NR.</row-66>
+	<row-66>Documentation technique</row-66>
+	<row-66>0</row-66>
+	<row-67>Front-end</row-67>
+	<row-67>5. Implémenter et développer les fonctionnalités pour limiter les impacts</row-67>
+	<row-67>User Experience</row-67>
+	<row-67>L'état des lieux des données d'entrée est-il mis à disposition afin d'être réutilisé dans d'autres projets ?</row-67>
+	<row-67>B</row-67>
+	<row-67>C</row-67>
+	<row-67>B</row-67>
+	<row-67>*</row-67>
+	<row-67>Medium</row-67>
+	<row-67>OnUpdate</row-67>
+	<row-67>Quelles sont les données utilisées en entrée et produite pour les autres projets ?</row-67>
+	<row-67>Les principes NR sont stables et les bonnes pratiques déployées sont directement utilisables dans d'autres contextes projet, d'autant plus que les projets au sein d'une organisation ont beaucoup de similarités que ce soit dans les méthodes, les objectifs ou les périmètres fonctionnels. Dans la phase de développement, collecter, préparer et produire ces éléments est un gage d'efficacité et de fiabilité pour augmenter la maturité de l'organisation dans ses pratiques NR.</row-67>
+	<row-67>Documentation technique</row-67>
+	<row-67>0</row-67>
+	<row-68>Front-end</row-68>
+	<row-68>6. S'assurer que l'utilisation du service permet le contrôle des impacts</row-68>
+	<row-68>Flux </row-68>
+	<row-68>Limitez-vous les flux échanges ?</row-68>
+	<row-68>B</row-68>
+	<row-68>A</row-68>
+	<row-68>A</row-68>
+	<row-68>**</row-68>
+	<row-68>High</row-68>
+	<row-68>OnUpdate</row-68>
+	<row-68>"Est-ce qu'il y a une surveillance des flux échangés? Existe-t-il une matrice des flux ? Les flux échangés sont-ils conformes à la matrice des flux ?"</row-68>
+	<row-68>Dans les usages de services numériques les échanges de données sont à la fois indispensables mais génèrent une consommation importante de ressources. La réduction des besoins d'échanges au strict minimum diminue l'impact de ces échanges. Seule la vue globale des flux avec leurs sources, destinations et objectifs permettent de qualifier la nécessité et d'accepter l'impact de consommation qu'ils génèrent.</row-68>
+	<row-68>Les outils de développement et la console des navigateurs permettent de tracer les flux échangés, leurs volumes et fréquences (ex: CHROME : console / network)</row-68>
+	<row-68>0</row-68>
+	<row-69>Front-end</row-69>
+	<row-69>6. S'assurer que l'utilisation du service permet le contrôle des impacts</row-69>
+	<row-69>Flux </row-69>
+	<row-69>Est-ce qu'il y a des fichiers en double ?</row-69>
+	<row-69>C</row-69>
+	<row-69>B</row-69>
+	<row-69>B</row-69>
+	<row-69>**</row-69>
+	<row-69>Low</row-69>
+	<row-69>Periodic</row-69>
+	<row-69>A quelle fréquence sont contrôlés les fichiers pour identifier les duplications?</row-69>
+	<row-69>En plus des besoins de réplication pour gérer la sécurité et la disponibilité des services, certains fichiers sont présents dans plusieurs emplacements sans réelles justifications. La recherche des doublons permet de réduire les volumes de stockage et de sauvegardes sans impact sur le fonctionnement du service.</row-69>
+	<row-69>File system</row-69>
+	<row-69>0</row-69>
+	<row-70>Front-end</row-70>
+	<row-70>6. S'assurer que l'utilisation du service permet le contrôle des impacts</row-70>
+	<row-70>Flux </row-70>
+	<row-70>Combien de domaines différents sont utilisés ?</row-70>
+	<row-70>B</row-70>
+	<row-70>B</row-70>
+	<row-70>B</row-70>
+	<row-70>*</row-70>
+	<row-70>Low</row-70>
+	<row-70>Once</row-70>
+	<row-70>Utilisez-vous plus de 5 domaines différents ?</row-70>
+	<row-70>Les mécanismes de cache et la mise en oeuvre des accès aux ressources externes est facilité lorsque le nombre de sources sont réduites. L'utilisation de nombreux domaines est inefficace à la fois d'un point de vue performance et NR.</row-70>
+	<row-70>CHROME : console extension green IT / bonne pratiques</row-70>
+	<row-70>0</row-70>
+	<row-71>Front-end</row-71>
+	<row-71>9. Implémenter des solutions techniques dont l'impact est le plus faible</row-71>
+	<row-71>Thématique : UI</row-71>
+	<row-71>Une version épurée est-elle disponible pour les impressions ?</row-71>
+	<row-71>A</row-71>
+	<row-71>A</row-71>
+	<row-71>B</row-71>
+	<row-71>*</row-71>
+	<row-71>High</row-71>
+	<row-71>OnUpdate</row-71>
+	<row-71>Le format d'impression est-il spécifié pour réduire l'espace et l'encre utilisé ?</row-71>
+	<row-71>Les flux de dématérialisation sont parfois rompus, et imposent la production d'écrits sur papiers. L'utilisateur dans certains cas peut aussi être plus confortable à utiliser des documents imprimés plutôt que 100% électroniques. Les impressions ont un impact environnemental important, que ce soit dans la consommation de papier, de consommables tels que les cartouches et encres d'impression. Les besoins de présentation en électronique ou en impression sont différents, d'autre part la limitation de l'empreinte environnementale doit conduire à réduire la densité et le volume d'informations imprimées.</row-71>
+	<row-71>Les tests de navigation / parcours utilisateur couvrent les impressions et l'analyse des documents imprimés</row-71>
+	<row-71>1</row-71>
+	<row-72>Front-end</row-72>
+	<row-72>10. Rechercher la mise en oeuvre de comportements sobres</row-72>
+	<row-72>Thématique : UI</row-72>
+	<row-72>Les objets de cartographie, animations, vidéos sont-ils présentés dans un mode statique ?</row-72>
+	<row-72>B</row-72>
+	<row-72>A</row-72>
+	<row-72>A</row-72>
+	<row-72>*</row-72>
+	<row-72>High</row-72>
+	<row-72>OnUpdate</row-72>
+	<row-72>Une image statique est-elle affichée plutôt qu'un objet de cartographie, animation, vidéo ?</row-72>
+	<row-72>Les objets de cartographie n'ont pas toujours une pertinence à être présentés sous forme d'objets dynamiques et interactifs. La version statique sous forme d'image des plans peut apporter à l'utilisateur suffisamment d'information sans qu'il n'ait besoin d'interagir avec l'objet. Les objets de cartographie sont complexes et nécessitent des ressources de traitements et l'utilisation de capteurs, ce que les versions images des plans évite. L'utilisateur conserve la possibilité d'interaction en activant la version dynamique mais uniquement à sa demande.</row-72>
+	<row-72>L'analyse des codes sources et les tests de navigation couvrent la recherche des éléments dynamiques.</row-72>
+	<row-72>1</row-72>
+	<row-73>Spécifications</row-73>
+	<row-73>1. Organiser les ressources humaines projets pour permettre la prise en compte de la démarche NR</row-73>
+	<row-73>Thématique : Equipe projet</row-73>
+	<row-73>Les enjeux NR du projet ont-ils été communiqués à l'équipe dès l'origine ?</row-73>
+	<row-73>A</row-73>
+	<row-73>A</row-73>
+	<row-73>B</row-73>
+	<row-73>*</row-73>
+	<row-73>High</row-73>
+	<row-73>Once</row-73>
+	<row-73>Combien de personnes sensibilisées / formées au NR dans l'équipe projet ?</row-73>
+	<row-73>La démarche NR est mieux prise en compte lorsqu'elle s'insère par un processus systémique et qu'elle est exposée comme direction à suivre pour tous les acteurs.</row-73>
+	<row-73>La fiche projet précise les objectifs et attendus NR</row-73>
+	<row-73>1</row-73>
+	<row-74>Spécifications</row-74>
+	<row-74>1. Organiser les ressources humaines projets pour permettre la prise en compte de la démarche NR</row-74>
+	<row-74>Thématique : Equipe projet</row-74>
+	<row-74>Chaque entité de l'équipe Projet dispose-t-elle des compétences NR ?</row-74>
+	<row-74>A</row-74>
+	<row-74>B</row-74>
+	<row-74>B</row-74>
+	<row-74>*</row-74>
+	<row-74>High</row-74>
+	<row-74>OnUpdate</row-74>
+	<row-74>Combien de personnes sont sensibilisées et formées au NR ?</row-74>
+	<row-74>Chacune des étapes projet requiert des connaissances spécifiques pour les aspects NR, il est important que toutes les étapes soient couvertes afin que les résultats NR soient cohérents tout au long de la vie du service.</row-74>
+	<row-74>Plan de formation adapté à chacun des profils</row-74>
+	<row-74>1</row-74>
+	<row-75>Spécifications</row-75>
+	<row-75>1. Organiser les ressources humaines projets pour permettre la prise en compte de la démarche NR</row-75>
+	<row-75>Equipe projet</row-75>
+	<row-75>Les référents NR de l'organisation sont-ils identifiés ?</row-75>
+	<row-75>A</row-75>
+	<row-75>A</row-75>
+	<row-75>B</row-75>
+	<row-75>*</row-75>
+	<row-75>High</row-75>
+	<row-75>Once</row-75>
+	<row-75>Y a-t-il un référent NR permanent ou dédié au projet ?</row-75>
+	<row-75>Le NR nécessite une forte connaissance qui doit être portée par des personnes qui sont les mieux adaptées.</row-75>
+	<row-75>La fiche de cadrage projet désigne le référent NR du projet.</row-75>
+	<row-75>0</row-75>
+	<row-76>Spécifications</row-76>
+	<row-76>3. Organiser la méthodologie projet pour permettre d'appliquer une démarche NR</row-76>
+	<row-76>Thématique : Méthodologie projet</row-76>
+	<row-76>Quelle proportion des fonctionnalités (User Story) ont une composante NR ?</row-76>
+	<row-76>B</row-76>
+	<row-76>B</row-76>
+	<row-76>B</row-76>
+	<row-76>*</row-76>
+	<row-76>High</row-76>
+	<row-76>OnUpdate</row-76>
+	<row-76>Une exigence NR est-elle justifiée plutôt qu'un aspect NR dans une exigence plus générale ?</row-76>
+	<row-76>Certaines fonctionnalités peuvent être conçues avec des impacts NR très différents. En l'absence de clarification, la solution choisie sera le plus souvent pilotée par la facilité ou l'appétence technique, ce qui s'oppose en général à la performance NR. Le seul moyen de guider les décisions est d'introduire des points d'attention sur les aspects NR dans la majorité des User Stories.</row-76>
+	<row-76>Le Backlog utilise des Tags/Labels NR pour identifier les user stories avec des éléments NR</row-76>
+	<row-76>1</row-76>
+	<row-77>Spécifications</row-77>
+	<row-77>3. Organiser la méthodologie projet pour permettre d'appliquer une démarche NR</row-77>
+	<row-77>Méthodologie projet</row-77>
+	<row-77>Chaque fonctionnalité est-elle évaluée par rapport aux usages ?</row-77>
+	<row-77>B</row-77>
+	<row-77>B</row-77>
+	<row-77>B</row-77>
+	<row-77>*</row-77>
+	<row-77>High</row-77>
+	<row-77>OnUpdate</row-77>
+	<row-77>Les fonctionnalités attendues par l'utilisateur et leur périmètre d'action sont-ils définis afin de poser un cadre aux interactions et ne pas aller dans le superflu ?</row-77>
+	<row-77>Les User Story / Use Case doivent être spécifiés par rapport à des usages afin de ne pas aller vers une inflation de fonctionnalités qui seraient superflues par rapport aux besoins réels des utilisateurs. Proposer des fonctionnalités marginales va engendrer une empreinte environnementale, un coût et une incompréhension du service supplémentaire non justifiés.</row-77>
+	<row-77>Definition of Done</row-77>
+	<row-77>0</row-77>
+	<row-78>Spécifications</row-78>
+	<row-78>5. Préparer le suivi du cycle de vie du projet et des indicateurs de performance / bénéfice NR</row-78>
+	<row-78>Thématique : Processus économique</row-78>
+	<row-78>Dans le processus d'achat (Appel d'offre) des exigences d'engagement NR sont-elles demandées aux prestataires externes ?</row-78>
+	<row-78>C</row-78>
+	<row-78>B</row-78>
+	<row-78>B</row-78>
+	<row-78>*</row-78>
+	<row-78>High</row-78>
+	<row-78>OnUpdate</row-78>
+	<row-78>Les exigences NR des prestataires sont-elles définies ?</row-78>
+	<row-78>Un projet est rarement réalisé avec un périmètre couvert à 100% au sein de l'organisation, nombre de ressources externes sont mobilisées au cours du projet. Les spécifications permettent d'identifier ces ressources nécessaires et leur associer des exigences NR pour permettre de sélectionner les prestataires en fonctions des contraintes techniques, de solvabilité économique et de NR.</row-78>
+	<row-78>Les procédures d'achat contiennent des éléments de sélection liées aux enjeux NR</row-78>
+	<row-78>1</row-78>
+	<row-79>Spécifications</row-79>
+	<row-79>5. Préparer le suivi du cycle de vie du projet et des indicateurs de performance / bénéfice NR</row-79>
+	<row-79>Thématique : Gestion du cycle de vie</row-79>
+	<row-79>Les données et procédures spécifiées ont-elles toutes une information de fin de vie ?</row-79>
+	<row-79>B</row-79>
+	<row-79>A</row-79>
+	<row-79>A</row-79>
+	<row-79>*</row-79>
+	<row-79>Medium</row-79>
+	<row-79>OnUpdate</row-79>
+	<row-79>La catalogue des procédures et données est-il à jour ?</row-79>
+	<row-79>Les spécifications font apparaître des collections de données des procédures asynchrones ou des tâches périodiques indispensables au bon fonctionnement du service. Ces éléments sont le plus souvent invisibles et en l'absence de spécifications explicites des processus de retrait ils sont rarement pris en compte dans les fins d'exploitation d'un service. Chacun de ces éléments doit porter sa propre information de fin de vie.</row-79>
+	<row-79>Chaque élément référencé dans le Dossier Technique porte une information de fin de vie</row-79>
+	<row-79>1</row-79>
+	<row-80>Stratégie</row-80>
+	<row-80>1. Définir et valider les besoins et les enjeux du projet afin d'anticiper les impacts</row-80>
+	<row-80>Thématique : Cadrage projet</row-80>
+	<row-80>Le besoin métier est-il exprimé ?</row-80>
+	<row-80>B</row-80>
+	<row-80>B</row-80>
+	<row-80>A</row-80>
+	<row-80>*</row-80>
+	<row-80>High</row-80>
+	<row-80>OnUpdate</row-80>
+	<row-80>Les besoins métiers sont-ils évalués de manière impartiale par rapport à des usages ?</row-80>
+	<row-80>Les incertitudes poussent à extrapoler les besoins souvent au delà des attentes réelles ce qui est nuisible pour les impacts environnementaux</row-80>
+	<row-80>La documentation de collecte et expression des besoins est formalisée, validée et partagée</row-80>
+	<row-80>1</row-80>
+	<row-81>Stratégie</row-81>
+	<row-81>1. Définir et valider les besoins et les enjeux du projet afin d'anticiper les impacts</row-81>
+	<row-81>Thématique : Emergence</row-81>
+	<row-81>Le besoin couvert par le service numérique s'inscrit-il dans l'un des objectifs de développement durable ?</row-81>
+	<row-81>A</row-81>
+	<row-81>A</row-81>
+	<row-81>A</row-81>
+	<row-81>*</row-81>
+	<row-81>High</row-81>
+	<row-81>Once</row-81>
+	<row-81>Le service répond-t-il à au moins l'un des Objectifs de Développement Durable (ODD) ? </row-81>
+	<row-81>Le questionnement de l'utilité du service numérique par rapport à l'un ou plusieurs des 17 ODD est capital, afin d'éviter la production de services numériques qui ne soient pas porteurs de valeurs.</row-81>
+	<row-81>Fiche de cadrage projet</row-81>
+	<row-81>1</row-81>
+	<row-82>Stratégie</row-82>
+	<row-82>1. Définir et valider les besoins et les enjeux du projet afin d'anticiper les impacts</row-82>
+	<row-82>Emergence</row-82>
+	<row-82>Les objectifs NR sont-ils exposés clairement et partagés par toutes les parties prenantes, internes ou externes à l'organisation ?</row-82>
+	<row-82>A</row-82>
+	<row-82>B</row-82>
+	<row-82>B</row-82>
+	<row-82>*</row-82>
+	<row-82>High</row-82>
+	<row-82>Once</row-82>
+	<row-82>Avez-vous mis en place une communication formelle des objectifs NR, accessible à tous les acteurs ?</row-82>
+	<row-82>Plusieurs acteurs, y compris externes à l'organisation, peuvent être impliqués dans le projet. La perméabilité de la démarche NR vers toutes les parties prenantes peut permettre d'identifier / activer des leviers que des acteurs n'auraient peut-être pas spontanément exprimés.</row-82>
+	<row-82>Fiche projet</row-82>
+	<row-82>0</row-82>
+	<row-83>Stratégie</row-83>
+	<row-83>1. Définir et valider les besoins et les enjeux du projet afin d'anticiper les impacts</row-83>
+	<row-83>Emergence</row-83>
+	<row-83>Les délais de mise en oeuvre sont-ils envisagés ?</row-83>
+	<row-83>B</row-83>
+	<row-83>B</row-83>
+	<row-83>A</row-83>
+	<row-83>*</row-83>
+	<row-83>Medium</row-83>
+	<row-83>Once</row-83>
+	<row-83>Avez-vous chiffré les bénéfices/sur-coûts de la démarche NR sur le planning projet ?</row-83>
+	<row-83>La gestion des délais projet est toujours au centre des préoccupations. Pour que le NR ne soit pas l'élément pointé du doigt il faut que les délais (en plus ou en moins) liés à cette démarche soient exprimés. Le délai projet n'intervient qu'une fois dans la vie du service, le gain ou la dette NR du projet va se multiplier tout au long du cycle de vie du projet.</row-83>
+	<row-83>Fiche de cadrage projet</row-83>
+	<row-83>0</row-83>
+	<row-84>Stratégie</row-84>
+	<row-84>1. Définir et valider les besoins et les enjeux du projet afin d'anticiper les impacts</row-84>
+	<row-84>Cadrage projet</row-84>
+	<row-84>Les réunions sont-elles limitées au strict minimum, en privilégiant le distanciel, lorsque les réunions nécessitent des déplacements physiques ?</row-84>
+	<row-84>A</row-84>
+	<row-84>A</row-84>
+	<row-84>B</row-84>
+	<row-84>*</row-84>
+	<row-84>High</row-84>
+	<row-84>Once</row-84>
+	<row-84>Les outils existent-ils dans l'entreprise pour permettre les réunions en distanciel dans de bonnes conditions ?</row-84>
+	<row-84>Les trajets sont sources d'émissions de Gaz à Effet de Serre (GES) et ont un impact sur l'organisation personnelle des collaborateurs.</row-84>
+	<row-84>La fiche de cadrage projet défini les réunions et les distances de déplacements de tous les participants</row-84>
+	<row-84>0</row-84>
+	<row-85>Stratégie</row-85>
+	<row-85>1. Définir et valider les besoins et les enjeux du projet afin d'anticiper les impacts</row-85>
+	<row-85>Cadrage projet</row-85>
+	<row-85>Le télétravail est-il autorisé, sans limites, aux collaborateurs qui le souhaitent et dont l'activité le permet ?</row-85>
+	<row-85>A</row-85>
+	<row-85>A</row-85>
+	<row-85>B</row-85>
+	<row-85>*</row-85>
+	<row-85>Medium</row-85>
+	<row-85>Once</row-85>
+	<row-85>L'entreprise offre-t-elle un cadre au télétravail ?</row-85>
+	<row-85>Outre la limitation des transports quotidiens et leurs impacts environnementaux, les temps perdus lors des trajets peuvent être considérables. Les outils et l'organisation doivent permettre en revanche de lutter contre la rupture de lien social qui peut s'installer avec le télétravail.</row-85>
+	<row-85>La stratégie RH précise les conditions et modalités du télétravail</row-85>
+	<row-85>0</row-85>
+	<row-86>Stratégie</row-86>
+	<row-86>1. Définir et valider les besoins et les enjeux du projet afin d'anticiper les impacts</row-86>
+	<row-86>Cadrage projet</row-86>
+	<row-86>Comment faire du NR plus qu'un objectif de communication ?</row-86>
+	<row-86>A</row-86>
+	<row-86>B</row-86>
+	<row-86>B</row-86>
+	<row-86>*</row-86>
+	<row-86>Medium</row-86>
+	<row-86>Once</row-86>
+	<row-86>Les exigences NR sont-elles prises en compte par toutes les équipes projets ?</row-86>
+	<row-86>Les énergies et budgets dépensés pour les aspects purement communication (greenwashing) peuvent être conséquents pour aucun résultat tangible. Avec les mêmes investissements il est tout à fait possible d'obtenir des résultats significatifs sur lesquels la communication sera de plus, plus efficace.</row-86>
+	<row-86>Stratégie RSE / NR - schéma directeur</row-86>
+	<row-86>0</row-86>
+	<row-87>Stratégie</row-87>
+	<row-87>1. Définir et valider les besoins et les enjeux du projet afin d'anticiper les impacts</row-87>
+	<row-87>Cadrage projet</row-87>
+	<row-87>La cible des utilisateurs (principale et secondaire) est-elle définie, pour préciser le besoin métier ?</row-87>
+	<row-87>A</row-87>
+	<row-87>B</row-87>
+	<row-87>B</row-87>
+	<row-87>*</row-87>
+	<row-87>High</row-87>
+	<row-87>OnUpdate</row-87>
+	<row-87>Les profils utilisateurs sont-ils décrits avec les USE CASE correspondant ?</row-87>
+	<row-87>Pour répondre justement (ni trop, ni trop peu) aux attentes utilisateurs, il est indispensable de connaître les cibles et leurs comportements., afin de ne pas surcharger les applicatifs, ni les appauvrir au point qu'ils ne répondent plus aux attentes légitimes. Les utilisateurs secondaires ont des besoins souvent plus simples. Sans l'identification de cette catégorie d'utilisateur, il est difficile de dimensionner correctement le service.</row-87>
+	<row-87>Fiche de cadrage projet</row-87>
+	<row-87>0</row-87>
+	<row-88>Stratégie</row-88>
+	<row-88>1. Définir et valider les besoins et les enjeux du projet afin d'anticiper les impacts</row-88>
+	<row-88>Cadrage projet</row-88>
+	<row-88>Les matériels utilisateurs sont-ils identifiés ?</row-88>
+	<row-88>C</row-88>
+	<row-88>B</row-88>
+	<row-88>C</row-88>
+	<row-88>**</row-88>
+	<row-88>High</row-88>
+	<row-88>OnUpdate</row-88>
+	<row-88>Chaque USE CASE est-il associé à la liste des équipements matériels nécessaires à sa mise en oeuvre ?</row-88>
+	<row-88>Certaines utilisations peuvent être contraintes par les équipements des utilisateurs, pour permettre un choix plus large d'équipements même anciens et limiter les renouvellements de matériels. Il est important de connaître les profils de matériel que les utilisateurs vont pouvoir employer, aujourd'hui et demain.</row-88>
+	<row-88>Dossier Technique</row-88>
+	<row-88>0</row-88>
+	<row-89>Stratégie</row-89>
+	<row-89>1. Définir et valider les besoins et les enjeux du projet afin d'anticiper les impacts</row-89>
+	<row-89>Cadrage projet</row-89>
+	<row-89>L’ensemble des produits et services sont-ils indispensables en ligne ?</row-89>
+	<row-89>B</row-89>
+	<row-89>A</row-89>
+	<row-89>A</row-89>
+	<row-89>*</row-89>
+	<row-89>Medium</row-89>
+	<row-89>Once</row-89>
+	<row-89>Le produit/service peut-il être envisagé sans être déployé en ligne, avec un résultat similaire pour l'entreprise ?</row-89>
+	<row-89>Certaines fonctionnalités sont proposées en mode connecté alors qu'aucune donnée distante ou aucun processus de calcul lourd n'est requis, dans ces cas une solution locale (hors ligne) est efficace d'un point de vue environnemental avec moins de circulation d'information et moins d'utilisation des réseaux. En revanche, si le mode hors ligne nécessite des duplications d'informations, il ne se justifie que si les accès réseaux sont intermittents et posent des difficultés d'utilisation du service.</row-89>
+	<row-89>La fiche de cadrage projet précise les produits et services associés et leurs modes d'opération (en ligne, en personne, ...)</row-89>
+	<row-89>0</row-89>
+	<row-90>Stratégie</row-90>
+	<row-90>1. Définir et valider les besoins et les enjeux du projet afin d'anticiper les impacts</row-90>
+	<row-90>Cadrage projet</row-90>
+	<row-90>Est ce que je peux proposer de couvrir les besoins autrement, en évitant le digital avec un moyen plus respectueux de l’environnement ?</row-90>
+	<row-90>B</row-90>
+	<row-90>A</row-90>
+	<row-90>A</row-90>
+	<row-90>*</row-90>
+	<row-90>Medium</row-90>
+	<row-90>Once</row-90>
+	<row-90>Le produit/service peut-il être envisagé sans être numérique, avec un résultat similaire pour l'entreprise ?</row-90>
+	<row-90>Certains processus manuels simples peuvent être une alternative au tout numérique, même au sein d'un service numérique. Dans le cadre d'un service numérique la tendance naturelle est d'y intégrer toutes les étapes sans se poser la question de l'efficacité environnementale.</row-90>
+	<row-90>La fiche de cadrage projet précise pour chaque besoin une évaluation d'impact</row-90>
+	<row-90>0</row-90>
+	<row-91>Stratégie</row-91>
+	<row-91>1. Définir et valider les besoins et les enjeux du projet afin d'anticiper les impacts</row-91>
+	<row-91>Cadrage projet</row-91>
+	<row-91>La solution retenue est-elle la plus respectueuse de l'environnement ?</row-91>
+	<row-91>B</row-91>
+	<row-91>A</row-91>
+	<row-91>B</row-91>
+	<row-91>**</row-91>
+	<row-91>Medium</row-91>
+	<row-91>OnUpdate</row-91>
+	<row-91>Avez-vous exprimé des scénarios alternatifs et évalué l'impact NR de chacun ?</row-91>
+	<row-91>Le nouveau service peut apporter une meilleure efficacité environnementale, mais il peut aussi participer à la création de dette environnementale supplémentaire, l'ensemble des 3 dimensions (3P) doivent pouvoir montrer un bénéfice sinon le positionnement du service peut être à revoir.</row-91>
+	<row-91>Une analyse d'impact est définie pour permettre d'arbitrer les impacts vis à vis de la couverture des besoins</row-91>
+	<row-91>0</row-91>
+	<row-92>Stratégie</row-92>
+	<row-92>1. Définir et valider les besoins et les enjeux du projet afin d'anticiper les impacts</row-92>
+	<row-92>Cadrage projet</row-92>
+	<row-92>Les gains NR sont-ils évalués en préalable du projet ?</row-92>
+	<row-92>B</row-92>
+	<row-92>B</row-92>
+	<row-92>A</row-92>
+	<row-92>**</row-92>
+	<row-92>Medium</row-92>
+	<row-92>Once</row-92>
+	<row-92>Avez-vous chiffré le bénéfice environnemental du projet en faisant de l’éco-conception ou en décidant d'éviter le numérique ?</row-92>
+	<row-92>Dans le cas de refonte de services, il est plus simple d'estimer les gains attendus par le nouveau service en référence au service actuel. Pour un service nouveau, l'étude préalable déterminera des hypothèses de gains qui devront être affinées au cours du projet. L'affichage des gains attendus est un marqueur important pour convaincre l'ensemble des acteurs du bien fondé de la démarche</row-92>
+	<row-92>Analyse d'impact</row-92>
+	<row-92>0</row-92>
+	<row-93>Stratégie</row-93>
+	<row-93>1. Définir et valider les besoins et les enjeux du projet afin d'anticiper les impacts</row-93>
+	<row-93>Emergence</row-93>
+	<row-93>Les budgets financiers pour les aspects NR du projet sont-ils évalués ?</row-93>
+	<row-93>B</row-93>
+	<row-93>B</row-93>
+	<row-93>A</row-93>
+	<row-93>*</row-93>
+	<row-93>High</row-93>
+	<row-93>Once</row-93>
+	<row-93>Est ce que j’ai les moyens matériels ? Mes équipements sont-ils à renouveler ou à acheter et quelle sera la manière la plus écologique de le faire ? Les moyens humains sont-ils identifiés pour chaque phase du projet ? Les moyens financiers pour réaliser le projet en éco-conception sont-ils alloués ? </row-93>
+	<row-93>"Le NR va générer une nouvelle catégorie d'exigences qui devront être prises en compte dans les démarches projet, et demanderont des lignes budgétaires clairement identifiées. Bien que souvent les projets NR soient plus efficaces, moins ""boulimiques"" de technologies ""à la mode"" et de fonctionnalités inutiles, les charges projet en final sont diminuées. "</row-93>
+	<row-93>Affectation des budgets</row-93>
+	<row-93>0</row-93>
+	<row-94>Stratégie</row-94>
+	<row-94>1. Définir et valider les besoins et les enjeux du projet afin d'anticiper les impacts</row-94>
+	<row-94>Emergence</row-94>
+	<row-94>Des équipements matériels sont-ils à renouveler ou à acheter pour le projet, les équipements supplémentaires nécessaires sont-ils mis à disposition en gardant en tête les principes du NR ?</row-94>
+	<row-94>C</row-94>
+	<row-94>B</row-94>
+	<row-94>B</row-94>
+	<row-94>*</row-94>
+	<row-94>High</row-94>
+	<row-94>Once</row-94>
+	<row-94>La politique d'achat/renouvellement de matériels prend-elle en compte l'efficacité NR ?</row-94>
+	<row-94>Le lancement de nouveaux projets est souvent l'occasion de renouveler ou compléter les équipements techniques. Dans le principe de la démarche NR, il serait plutôt l'occasion de challenger une meilleure utilisation des équipements disponibles et mettre en place toutes les solutions possibles pour les préserver.</row-94>
+	<row-94>Gestion de configuration</row-94>
+	<row-94>0</row-94>
+	<row-95>Stratégie</row-95>
+	<row-95>1. Définir et valider les besoins et les enjeux du projet afin d'anticiper les impacts</row-95>
+	<row-95>Emergence</row-95>
+	<row-95>Mes ressources humaines (Identifiées pour chaque phase) sont-elles disponibles ?</row-95>
+	<row-95>A</row-95>
+	<row-95>A</row-95>
+	<row-95>B</row-95>
+	<row-95>*</row-95>
+	<row-95>High</row-95>
+	<row-95>Once</row-95>
+	<row-95>Les sensibilisations/formations NR nécessaires sont-elles budgetées et planifiées ?</row-95>
+	<row-95>L'efficacité de la démarche NR ne peut être atteinte sans la connaissance des enjeux NR par les personnes qui prendront part au projet.</row-95>
+	<row-95>La fiche de cadrage projet précise les profils de tous les membres de l'équipe.</row-95>
+	<row-95>0</row-95>
+	<row-96>Stratégie</row-96>
+	<row-96>2. Prévoir, préparer et valider les disponibilités des ressources humaines du Numérique Responsable</row-96>
+	<row-96>Thématique : Emergence</row-96>
+	<row-96>Les parties prenantes internes et externes sont-elles sensibilisées, voire formées/certifiées au NR ?</row-96>
+	<row-96>A</row-96>
+	<row-96>A</row-96>
+	<row-96>B</row-96>
+	<row-96>*</row-96>
+	<row-96>High</row-96>
+	<row-96>Periodic</row-96>
+	<row-96>Quel budget formation est alloué par type de profil ?</row-96>
+	<row-96>Chaque partie prenante à besoin d'une information efficace sur son domaine d'expertise et d'action, seul un plan de formation adapté peut apporter cette efficacité en amont des projets</row-96>
+	<row-96>Le plan de formation intègre les diffusions de sensibilisations et formations aux aspects NR. La communication externe propage les enjeux environnementaux du numérique.</row-96>
+	<row-96>1</row-96>
+	<row-97>Stratégie</row-97>
+	<row-97>2. Prévoir, préparer et valider les disponibilités des ressources humaines du Numérique Responsable</row-97>
+	<row-97>Emergence</row-97>
+	<row-97>Une stratégie pour sensibiliser les collègues/partenaires/clients au NR est-elle mise en place avec des étapes permettant de faire progresser les pratiques en continu ?</row-97>
+	<row-97>A</row-97>
+	<row-97>A</row-97>
+	<row-97>A</row-97>
+	<row-97>*</row-97>
+	<row-97>High</row-97>
+	<row-97>Periodic</row-97>
+	<row-97>Le plan de formation NR est-il mis en place et suivi ?</row-97>
+	<row-97>L'adoption du NR est une démarche globale, qui ne doit pas être freinée par la capacité de tout faire tout de suite, elle s'inscrit dans une progression qui s'installe au fur et à mesure des pratiques.</row-97>
+	<row-97>Le plan de formation intègre les diffusions de sensibilisations et formations aux aspects NR.</row-97>
+	<row-97>0</row-97>
+	<row-98>Stratégie</row-98>
+	<row-98>3. Déterminer et planifier la capacité de suivre et capitaliser sur les composantes Numérique Responsable des projets</row-98>
+	<row-98>Thématique : Emergence</row-98>
+	<row-98>La conformité numérique responsable est-elle exposée ?</row-98>
+	<row-98>A</row-98>
+	<row-98>A</row-98>
+	<row-98>B</row-98>
+	<row-98>*</row-98>
+	<row-98>High</row-98>
+	<row-98>Once</row-98>
+	<row-98>Une déclaration de conception responsable est-elle disponible pour le service numérique ?</row-98>
+	<row-98>"Un service numérique concu en respectant les recommandations du numérique responsable doit exposer les acquis et faiblesses identfiés. Dans une démarche similaire à celle déployée pour l'accessibilité avec la ""déclaration d'accessibilité""."</row-98>
+	<row-98>"Document ""déclaration de conception responsable"""</row-98>
+	<row-98>1</row-98>
+	<row-99>Stratégie</row-99>
+	<row-99>5. Agir en faveur de la réduction des impacts du SI en construisant des cibles et plans de SI urbanisés (*NEW)</row-99>
+	<row-99>Thématique : Urbanisation</row-99>
+	<row-99>Avez-vous construit une cible du SI en cherchant cohérence et mutualisation ?</row-99>
+	<row-99>B</row-99>
+	<row-99>B</row-99>
+	<row-99>A</row-99>
+	<row-99>**</row-99>
+	<row-99>High</row-99>
+	<row-99>Once</row-99>
+	<row-99>Une cellule d'Architecture d'Entreprise existe - t elle dans l'entreprise ? </row-99>
+	<row-99>La mesure des impacts du nouveau projet s'inscrit dans une optimisation globale des impacts du SI. </row-99>
+	<row-99>La vision du SI urbanisée</row-99>
+	<row-99>1</row-99>
+	<row-100>Stratégie</row-100>
+	<row-100>6. Agir en faveur de la réduction des impacts du SI en optimisant les assets IT et en mutualisant (*NEW)</row-100>
+	<row-100>Thématique : Urbanisation</row-100>
+	<row-100>Avez-vous défini et mis en place au sein de la DSI un dispositif de gestion de dette du SI et d'obsolescence ?</row-100>
+	<row-100>C</row-100>
+	<row-100>B</row-100>
+	<row-100>A</row-100>
+	<row-100>**</row-100>
+	<row-100>High</row-100>
+	<row-100>Once</row-100>
+	<row-100>"La cellule d'Architecture d'Entreprise a-t-elle mis en place un ""Application Portolio Management"" ? (APM)"</row-100>
+	<row-100>Gérer la dette technique et fontionnelle, anticiper les obsolescences, réduire les variétés de composants, de versions de composants, … va dans le sens à la fois d'une sécurisation du SI mais aussi d'une meilleure maîtrise des impacts du SI</row-100>
+	<row-100>La vision du SI urbanisée</row-100>
+	<row-100>1</row-100>
+	<row-101>Ux/Ui</row-101>
+	<row-101>1. Intégrer le Numérique Responsable dans les objectifs majeurs du projet</row-101>
+	<row-101>Thématique : Méthodologie</row-101>
+	<row-101>Dans les méthodes d'idéation, l'ensemble des parties prenantes est-il pris en compte dans toute sa dimension (humaine) ?</row-101>
+	<row-101>A</row-101>
+	<row-101>B</row-101>
+	<row-101>B</row-101>
+	<row-101>***</row-101>
+	<row-101>High</row-101>
+	<row-101>OnUpdate</row-101>
+	<row-101>"Une cartographie des parties prenantes a-t-elle été réalisée ? Une priorisation des parties prenantes est-elle faite ?"</row-101>
+	<row-101>Mettre l'Utilisateur au centre de la réflexion est la garantie de couvrir les besoins essentiels de vos cibles et d'avancer dans le bon sens. Par Utilisateurs, nous entendons les usagers finaux du service ou du produit mais également les différentes parties prenantes du projet. Considérer vos utilisateurs avec une dimension humaine et empathique permet d'élargir le prisme de votre réflexion et d'aller au-delà des aspects économiques et technologiques du projet.</row-101>
+	<row-101>Le panel de profils d'utilisateurs couvre l'ensemble des aspects humains que le NR doit adresser pour éviter la fracture numérique</row-101>
+	<row-101>1</row-101>
+	<row-102>Ux/Ui</row-102>
+	<row-102>1. Intégrer le Numérique Responsable dans les objectifs majeurs du projet</row-102>
+	<row-102>Thématique : Méthodologie</row-102>
+	<row-102>La planète est-elle prise en compte dans les méthodes d'idéation pour intégrer la dimension écologique (planet centric design) ?</row-102>
+	<row-102>B</row-102>
+	<row-102>A</row-102>
+	<row-102>B</row-102>
+	<row-102>***</row-102>
+	<row-102>High</row-102>
+	<row-102>OnUpdate</row-102>
+	<row-102>Le toolkit planet centric est-il connu et utilisé ?</row-102>
+	<row-102>Chaque décision de conception a un impact. Si les problématiques environnementales et écologiques ne sont pas au coeur de l'analyse, aucun objectif de maîtrise ou de réduction des impacts ne sera pris en compte et donc respecté.</row-102>
+	<row-102>Une démarche systémique / Planet Centric est mise en place. </row-102>
+	<row-102>1</row-102>
+	<row-103>Ux/Ui</row-103>
+	<row-103>1. Intégrer le Numérique Responsable dans les objectifs majeurs du projet</row-103>
+	<row-103>Thématique : Méthodologie</row-103>
+	<row-103>Les plus-values extra-financières du numérique responsable sont-elles valorisées dans le business model ?</row-103>
+	<row-103>B</row-103>
+	<row-103>B</row-103>
+	<row-103>A</row-103>
+	<row-103>***</row-103>
+	<row-103>High</row-103>
+	<row-103>Once</row-103>
+	<row-103>Les valeurs humaines, écologiques et économiques se retrouvent-elles dans le business model canvas et sont-elles validées par toutes les parties prenantes  ? </row-103>
+	<row-103>Le Numérique Responsable (NR) peut-être considéré comme un réel vecteur de développement économique au sein de votre organisation. Intégrer la dimension NR de façon pérenne à votre business model permettra d'éviter des arbitrages permanents sur sa valorisation et son intégration à vos futurs projets.</row-103>
+	<row-103>les analyses de bénéfices couvrent les aspects NR avec leurs retombées </row-103>
+	<row-103>1</row-103>
+	<row-104>Ux/Ui</row-104>
+	<row-104>2. Sensibiliser les parties prenantes internes et externes au Numérique Responsable</row-104>
+	<row-104>Thématique : Ressources Projet </row-104>
+	<row-104>Les parties prenantes sont-elles sensibilisées au NR ?</row-104>
+	<row-104>A</row-104>
+	<row-104>B</row-104>
+	<row-104>A</row-104>
+	<row-104>*</row-104>
+	<row-104>High</row-104>
+	<row-104>Periodic</row-104>
+	<row-104>"Un partage de la connaissance et une sensibilisation vers les parties prenantes sont-ils en place ?"</row-104>
+	<row-104>Pour adhérer, il faut comprendre. Le NR n'est pas une discipline technique. Les principes du NR doivent être mis en oeuvre dans des pratiques métiers et les comportements de chacun des acteurs. Toutes les parties prenantes du projet doivent être sensibilisées au NR pour agir à leur niveau.</row-104>
+	<row-104>Le plan de formation intègre les diffusions de sensibilisations et formations aux aspects NR.</row-104>
+	<row-104>1</row-104>
+	<row-105>Ux/Ui</row-105>
+	<row-105>3. Rendre disponible et accessible le service numérique au plus grand nombre d'utilisateurs</row-105>
+	<row-105>Thématique : Méthodologie</row-105>
+	<row-105>Une stratégie de compatibilité avec les terminaux et versions logicielles obsolètes est-elle définie ?</row-105>
+	<row-105>A</row-105>
+	<row-105>A</row-105>
+	<row-105>B</row-105>
+	<row-105>***</row-105>
+	<row-105>High</row-105>
+	<row-105>Periodic</row-105>
+	<row-105>"La liste des terminaux est-elle élargie aux terminaux cibles secondaires ? Existe-t-il des exigences particulières en terme d'expérience utilisateur (habitudes à une interface existante, à un terminal donné) ? "</row-105>
+	<row-105>Les avancées technologiques poussent à augmenter en permanence les exigences matérielles, ce qui réduit le parc de périphériques sur lesquels un service peut s'exécuter. Cet aspect écarte certains utilisateurs et pousse au renouvellement d'équipements encore en état de fonctionner avec l'impact environnemental associé.</row-105>
+	<row-105>Chaque élément référencé dans le Dossier Technique porte une information de degrés de compatibilité</row-105>
+	<row-105>1</row-105>
+	<row-106>Ux/Ui</row-106>
+	<row-106>4. Permettre aux personnes en situation de handicap ou porteur de déficiences, d'accéder et d'utiliser efficacement le service numérique</row-106>
+	<row-106>Thématique : Méthodologie</row-106>
+	<row-106>Dès la conception, le service répond-t-il aux normes d'accessibilité en vigueur (au minimum) ?</row-106>
+	<row-106>A</row-106>
+	<row-106>C</row-106>
+	<row-106>A</row-106>
+	<row-106>**</row-106>
+	<row-106>High</row-106>
+	<row-106>OnUpdate</row-106>
+	<row-106>Quel est le niveau d'accessibilité visé et mesuré ?</row-106>
+	<row-106>Au delà des aspects purement réglementaires, l'anticipation de la prise en compte de l'accessibilité est nécessaire pour assurer une couverture de ce sujet durant toute la durée de vie du service. Anticiper les futurs points de règlements et normes permet de pérenniser le service en limitant les besoins de mises à jour dictées par l'environnement légal. </row-106>
+	<row-106>Les aspects reglementaires et légaux sont exprimés, validés et partagés</row-106>
+	<row-106>1</row-106>
+	<row-107>Ux/Ui</row-107>
+	<row-107>"5. ""Less is More"" : Concentrez vous sur les fonctionnalités essentielles et simplifiez votre interface"</row-107>
+	<row-107>Thématique : UI</row-107>
+	<row-107>Une sobriété visuelle est-elle mise en place, pour limiter les ressources énergétiques et l'impact sur la dégradation matérielle des composants visuels, sonores et tactiles constitutifs de l'interface ?</row-107>
+	<row-107>B</row-107>
+	<row-107>A</row-107>
+	<row-107>B</row-107>
+	<row-107>N/A</row-107>
+	<row-107>High</row-107>
+	<row-107>OnUpdate</row-107>
+	<row-107>"La charte graphique est-elle éco-compatible ? La charte graphique respecte-t-elle les normes d'accessibilité ?"</row-107>
+	<row-107>Des éléments/composants visuels, sonores et tactiles peuvent être mis en avant dans une démarche purement esthétique et/ou marketing mais n'ont que très peu d'intérêt pour l'utilisateur. La simplification de ces éléments apportera une meilleure ergonomie et un usage adapté à chacun ainsi qu'une réduction de l'impact énergétique.</row-107>
+	<row-107>Un module dark mode est systématiquement proposé</row-107>
+	<row-107>1</row-107>
+	<row-108>Ux/Ui</row-108>
+	<row-108>"5. ""Less is More"" : Concentrez vous sur les fonctionnalités essentielles et simplifiez votre interface"</row-108>
+	<row-108>Thématique : Méthodologie</row-108>
+	<row-108>Est-ce que les fonctionnalités sont utilisées par l'utilisateur ?</row-108>
+	<row-108>A</row-108>
+	<row-108>A</row-108>
+	<row-108>B</row-108>
+	<row-108>**</row-108>
+	<row-108>High</row-108>
+	<row-108>Periodic</row-108>
+	<row-108>Les fonctionnalités proposées sont-elles attendues et utilisées par vos cibles et apportent-elles une réelle valeur à votre produit ?</row-108>
+	<row-108>"Selon des études (cast software et standish group), 70% des fonctionnalités ne sont jamais ou rarement utilisées (ref 115 bonnes pratiques). Le nombre de fonctionnalités disponibles dans un service numérique impactent directement la consommation de ressources et l'impact environnemental, en créant des fonctionnalités de peu d'utilité. Ce sont des sources de création de dettes environnementales totalement inutiles. Les fonctionnalités augmentent aussi le volume du service, qui introduisent des délais de chargements, des espaces de stockage supplémentaires."</row-108>
+	<row-108>Les parcours utilisateurs sont simulés et validés pour identifier les utilisations de fonctionnalités. Des données sont identifiées et collectées (analytics / sondes) en production.</row-108>
+	<row-108>1</row-108>
+	<row-109>Ux/Ui</row-109>
+	<row-109>8. Ingénierie média : alléger au maximum les médias du service numérique ( images, animations, contenu ... )</row-109>
+	<row-109>Thématique : UI</row-109>
+	<row-109>Une politique de gestion/utilisation des médias afin de réduire leurs impacts est-elle en place, avec des critères de compression et de formats des médias ?</row-109>
+	<row-109>B</row-109>
+	<row-109>A</row-109>
+	<row-109>A</row-109>
+	<row-109>*</row-109>
+	<row-109>High</row-109>
+	<row-109>OnUpdate</row-109>
+	<row-109>Une checklist de qualité environnementale des médias utilisés dans le service est-elle utilisée ?  </row-109>
+	<row-109>Le volume de données transférées augmente l'empreinte environnementale du service. Il est nécessaire de proposer les médias nécessaires à l'affichage du service dans la compression idoine afin d'améliorer le service et augmenter sa sobriété. </row-109>
+	<row-109>Les outils/consoles de développement et les extensions des navigateurs permettent de vérifier les bonnes pratiques (ex : CHROME - Extension greenIT / bonnes pratiques)</row-109>
+	<row-109>1</row-109>
+	<row-110>Ux/Ui</row-110>
+	<row-110>8. Ingénierie média : alléger au maximum les médias du service numérique ( images, animations, contenu ... )</row-110>
+	<row-110>Thématique : UI</row-110>
+	<row-110>Le nombre de polices de caractères (fonts) et les variantes de polices appelées (graisse, caractères utilisés dans le projet) sont-ils limités ?</row-110>
+	<row-110>B</row-110>
+	<row-110>A</row-110>
+	<row-110>B</row-110>
+	<row-110>*</row-110>
+	<row-110>High</row-110>
+	<row-110>OnUpdate</row-110>
+	<row-110>"Une typo système peut-elle être utilisée ?"</row-110>
+	<row-110>Les polices de caractères peuvent être très volumineuses. En réduisant le nombre de polices uniquement à celles utilisées dans le service, la  volumétrie échangée diminue.</row-110>
+	<row-110>Les outils/consoles de développement et les extensions des navigateurs permettent de vérifier les bonnes pratiques (ex : FIREFOX - console / alertes)</row-110>
+	<row-110>1</row-110>
+	<row-111>Ux/Ui</row-111>
+	<row-111>8. Ingénierie média : alléger au maximum les médias du service numérique ( images, animations, contenu ... )</row-111>
+	<row-111>UI</row-111>
+	<row-111>Les vidéos et animations sont-elles utilisées uniquement lorsqu'elles apportent une valeur pour l'utilisateur ?</row-111>
+	<row-111>B</row-111>
+	<row-111>A</row-111>
+	<row-111>B</row-111>
+	<row-111>*</row-111>
+	<row-111>High</row-111>
+	<row-111>OnUpdate</row-111>
+	<row-111>Les informations de la vidéo ou de l'animation ne peuvent-elles pas être retranscrites dans un format alternatif ?</row-111>
+	<row-111>Les flux vidéo et les animations génèrent un volume de données important. La limitation des vidéos réduit la charge environnementale du service. Certains publics ne sont pas en mesure d'utiliser des vidéos, ils seront donc exclus du service si celui-ci s'appuie sur ce type de média.</row-111>
+	<row-111>Les parcours utilisateur présentent les objets média et la valeur ajoutée des informations proposées par ces objets</row-111>
+	<row-111>0</row-111>
+	<row-112>Ux/Ui</row-112>
+	<row-112>8. Ingénierie média : alléger au maximum les médias du service numérique ( images, animations, contenu ... )</row-112>
+	<row-112>UI</row-112>
+	<row-112>Les images sont-elles optimisées par rapport à leurs fonctions ?</row-112>
+	<row-112>B</row-112>
+	<row-112>A</row-112>
+	<row-112>B</row-112>
+	<row-112>*</row-112>
+	<row-112>High</row-112>
+	<row-112>OnUpdate</row-112>
+	<row-112>Est-ce que les images utilisées sont adaptées à leurs formats/tailles d'affichage ?</row-112>
+	<row-112>Le volume de données échangées pour la présentation d'une image dépend de sa taille et de la qualité de son format. Certaines images ont des valeurs d'information importantes, d'autres ne sont que de l'illustration. Les consommations de ressources liées doivent donc être en rapport avec l'importance de l'image et permettre à des publics pour lesquels les images ne sont pas accessibles de comprendre leur signification.</row-112>
+	<row-112>Les outils/consoles de développement et les extensions des navigateurs permettent de vérifier les bonnes pratiques (ex : CHROME - Extension greenIT / bonnes pratiques)</row-112>
+	<row-112>0</row-112>
+	<row-113>Ux/Ui</row-113>
+	<row-113>10. Valeur: concevez un Service Numérique éthique, en ligne avec vos valeurs</row-113>
+	<row-113>Thématique : Méthodologie</row-113>
+	<row-113>Le service évite-t-il les Dark Patterns ?</row-113>
+	<row-113>B</row-113>
+	<row-113>A</row-113>
+	<row-113>A</row-113>
+	<row-113>**</row-113>
+	<row-113>High</row-113>
+	<row-113>OnUpdate</row-113>
+	<row-113>La Force Continuity (perpétuation d'abonnement) peut-elle être bannie dans les services proposés ?</row-113>
+	<row-113>Certains services sont pensés pour créer une certaine forme de dépendance à celui-ci. L'utilisateur ne doit pas être soumis et exposé à certaines mécaniques de sur-consommation numérique.</row-113>
+	<row-113>Réalisation d'une étude de captologie</row-113>
+	<row-113>1</row-113>
+	<row-114>Ux/Ui</row-114>
+	<row-114>10. Valeur: concevez un Service Numérique éthique, en ligne avec vos valeurs</row-114>
+	<row-114>Thématique : Usage</row-114>
+	<row-114>Des règles en matière de respect de l'utilisateur sont-elles mises en place ?</row-114>
+	<row-114>A</row-114>
+	<row-114>B</row-114>
+	<row-114>A</row-114>
+	<row-114>***</row-114>
+	<row-114>Medium</row-114>
+	<row-114>OnUpdate</row-114>
+	<row-114>Une charte éthique numérique est-elle définie ? </row-114>
+	<row-114>Certains services sont pensés pour créer une certaine forme de dépendance à celui-ci. L'utilisateur doit pouvoir rester objectivement juge de sa consommation numérique</row-114>
+	<row-114>Réalisation d'une étude de captologie</row-114>
+	<row-114>1</row-114>
+</root>

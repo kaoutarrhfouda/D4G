@@ -137,10 +137,18 @@
         //Prend l'élément Team dans le XML, soit tout le document
         var bonnes_pratiques_list = xml.getElementsByTagName('root');
 
+        //sauvegarde si les éléments sont check ou pas
+        const checked_elements = [];
+        for(var j = 0; j < bonnes_pratiques_list[0].childElementCount/14; j++) {
+            var checked_unit = document.getElementById("checkbox"+j).checked;
+            checked_elements[j] = checked_unit;
+        }
+
+
         for(var i = 0; i < bonnes_pratiques_list[0].childElementCount/14; i++) {
             var checked = document.getElementById("checkbox"+i).checked;
             if(checked){
-            const recap = `<tr> 
+                const recap = `<tr> 
                         <td align="left">` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[0].innerHTML + `</td>
                         <td align="left">` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[1].innerHTML + `</td>
                         <td align="left">` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[2].innerHTML + `</td>
@@ -155,8 +163,8 @@
                         <td align="left">` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[11].innerHTML + `</td>
                         <td align="left">` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[12].innerHTML + `</td>
                     </tr>`;
-            const result = document.querySelector("#recapitulatif");
-            result.insertAdjacentHTML("beforeend", recap);
+                const result = document.querySelector("#recapitulatif");
+                result.insertAdjacentHTML("beforeend", recap);
             }
         }
     }
