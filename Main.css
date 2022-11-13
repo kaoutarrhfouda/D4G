@@ -254,7 +254,7 @@ th, td{
   padding: 10px;
 }
 
-#checkbox {
+input[type='checkbox'] {
     position:absolute;
     bottom:0;
     right:0;
@@ -285,19 +285,23 @@ th, td{
 /* Masquez la forme Popup */
 .form-popup {
   display: none;
+  background-color: white;
   position: fixed;
   left: 45%;
-  top: 5%;
+  top: 4%;
   transform: translate(-45%, 5%);
   border: 2px solid #666;
   z-index: 9;
+  overflow: scroll;
+  border: solid;
 }
 
 /* Styles pour le conteneur de la forme */
 .form-container {
-  max-width: 300px;
-  padding: 20px;
-  background-color: #fff;
+  max-width: 500px;
+  max-height: 550px;
+/*  padding: 20px;
+*/  background-color: #fff;
 }
 
 /* Largeur complète pour les champs de saisie */
