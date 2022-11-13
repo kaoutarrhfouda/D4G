@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="keywords" content="eco-conception,bon usage,design4green,Site,HTML,CSS " />
-    <!-- mots clés qui servent au référencement du site web -->
-    <meta name="author" content="Corentin,Alexandre,Kaoutar,Lucie" />
-    <!-- Indiquer le nom de l'auteur de la page -->
-    <meta http-equiv="refresh" content="3000" />
-    <!--Sert à refresh le site tout les x secondes-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Sert à dire au site de s'adapter au type d'appareil-->
-    <link rel="stylesheet" href="Main.css" />
-    <!-- Permet de linker ma page HTML à ma feuille CSS -->
-    <title>CALK</title>
-</head>
-
-<body>
-    <header>
-        <h1>eco-conception</h1>
-        <h2>Carnets de bon usage</h2> </header>
-    <nav>
-        <ul>
+   <head>
+      <meta charset="utf-8">
+      <meta name="keywords" content="eco-conception,bon usage,design4green,Site,HTML,CSS ">
+      <!-- mots clés qui servent au référencement du site web -->
+      <meta name="author" content="Corentin,Alexandre,Kaoutar,Lucie">
+      <!-- Indiquer le nom de l'auteur de la page -->
+      <meta http-equiv="refresh" content="3000">
+      <!--Sert à refresh le site tout les x secondes-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Sert à dire au site de s'adapter au type d'appareil-->
+      <link rel="stylesheet" href="Main.css">
+      <!-- Permet de linker ma page HTML à ma feuille CSS -->
+      <title>CALK</title>
+   </head>
+   <body>
+      <header>
+         <h1>eco-conception</h1>
+         <h2>Carnets de bon usage</h2>
+      </header>
+      <nav>
+         <ul>
             <li><a href="#Stratégie">Stratégie</a></li>
             <li><a href="#Spécifications">Spécifications</a></li>
             <li><a href="#Ux/Ui">Ux/Ui</a></li>
@@ -29,148 +28,149 @@
             <li><a href="#Architecture">Architecture</a></li>
             <li><a href="#Front-end">Frontend</a></li>
             <li><a href="#Back-end">Backend</a></li>
-        </ul>
-    </nav>
-    <div class="login-popup">
-        <div class="form-popup" id="popupForm">
+         </ul>
+      </nav>
+      <div class="login-popup">
+         <div class="form-popup" id="popupForm">
             <div class="form-container">
-                <div id="table-2">
-                    <h2>Tableau Recapitulatif</h2>
-                    <table width="100%">
-                        <thead>
-                            <tr>
-                                <th align="left">Famille</th>
-                                <th align="left">Recommandation</th>
-                                <th align="left">Thématique</th>
-                                <th align="left">Critère</th>
-                                <th align="left">People</th>
-                                <th align="left">Planet</th>
-                                <th align="left">Prosperity</th>
-                                <th align="left">Difficulté</th>
-                                <th align="left">Priorité</th>
-                                <th align="left">Récurrence</th>
-                                <th align="left">Tests</th>
-                                <th align="left">Précisions</th>
-                                <th align="left">Use case</th>
-                            </tr>
-                        </thead>
-                        <tbody id="recapitulatif">
-                            <!-- C'est ici que le code généré sera écrit -->
-                        </tbody>
-                    </table>
-                </div>
-                <button type="button" class="btn generate" onclick="printDiv()">Générer le rapport</button>
-                <button type="button" class="btn cancel" onclick="closeForm()">Fermer</button>
+               <div id="table-2">
+                  <h2>Tableau Recapitulatif</h2>
+                  <table>
+                     <thead>
+                        <tr>
+                           <th>Famille</th>
+                           <th>Recommandation</th>
+                           <th>Thématique</th>
+                           <th>Critère</th>
+                           <th>People</th>
+                           <th>Planet</th>
+                           <th>Prosperity</th>
+                           <th>Difficulté</th>
+                           <th>Priorité</th>
+                           <th>Récurrence</th>
+                           <th>Tests</th>
+                           <th>Précisions</th>
+                           <th>Use case</th>
+                        </tr>
+                     </thead>
+                     <tbody id="recapitulatif">
+                        <!-- C'est ici que le code généré sera écrit -->
+                     </tbody>
+                  </table>
+               </div>
+               <button type="button" class="btn generate" onclick="printDiv()">Générer le rapport</button>
+               <button type="button" class="btn cancel" onclick="closeForm()">Fermer</button>
             </div>
-        </div>
-    </div>
-    <section>
-        <form>
-<p>Séléctionné les bonnes pratique de votre choix puis validé votre panier pour obtenir un recapitulatif pdf.
-            Les bonnes pratique incontournable on déja été selectionné et seront obligatoirement dans votre pdf. </p>
+         </div>
+      </div>
+      <section>
+         <h4>Bienvenue sur se site créé dans le cadre du design4green</h4>
+         <form>
+            <p>Séléctionné les bonnes pratique de votre choix puis validé votre panier pour obtenir un recapitulatif pdf.
+               Les bonnes pratique incontournable on déja été selectionné et seront obligatoirement dans votre pdf. 
+            </p>
             <div class="container" id="container-familles">
-                <!-- La ou le code est gen -->
+               <!-- La ou le code est gen -->
             </div>
             <button type="button" class="open-button" onclick="openForm()">PANIER</button>
-        </form>
-    </section>
-    <footer>
-        <p>site web créé par Corentin, Alexandre, Kaoutar, Lucie dans le cadre du projet Design4green</p>
-    </footer>
-    <script>
-    var xmlHttp = new XMLHttpRequest();
-
-    function closeForm() {
-        document.getElementById("popupForm").style.display = "none";
-    }
-
-
-    //Permets de créer l'HTML à l'ouverture de la page depuis le XML
-    xmlHttp.onload = function() {
-            //crée une instance de DOMParser défini par la variable parser
-            let parser = new DOMParser(),
-                //converti la data en XML
-                xml = parser.parseFromString(this.responseText, "text/xml");
-            //Prend l'élément Team dans le XML, soit tout le document
-            var bonnes_pratiques_list = xml.getElementsByTagName('root');
-            var famille;
-            var famille_avant = bonnes_pratiques_list[0].getElementsByTagName('row-0')[0].innerHTML;
-            var recommandation;
-            var thematique;
-            var critere;
-            //fait un for sur la longueur du XML donc pour chaque ligne, et a chaque ligne affiche le nom de l'équipe ses points et son classement, puis crée une ligne de tableau
-            for(var i = 0; i < bonnes_pratiques_list[0].childElementCount / 14; i++) {
-                famille = bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[0].innerHTML;
-                recommandation = bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[1].innerHTML;
-                thematique = bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[2].innerHTML;
-                critere = bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[3].innerHTML;
-                //mets dans la variable row l'HTML avec les éléments de l'équipe traité dans la boucle for
-                const row = (famille != famille_avant ? ('<hr>') : '') + `<a class="odd-card card3    bgd-1">
-                                <div class="famille-carte" id="${famille}">
-                                    <span class="famille">${famille}</span>` + (bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[13].innerHTML == 1 ? (`<span class="incontournable">Incontournable</span>`) : '') + `
-                                </div>
-                                <h2>${recommandation}</h2>
-                                <p class="small">${thematique}</p>
-                                <p class="small ">${critere}</p>
-                                <input type="checkbox" id="checkbox" name="checkbox_` + i + `" ` + (bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[13].innerHTML == 1 ? (`checked`) : '') + `>
-                            </a>`;
-                //mets dans la variable results l'élément du site HTML dont l'id est results
-                const results = document.querySelector("#container-familles");
-                famille_avant = famille;
-                //insert dans results le code HTML généré avec les éléments de l'équipe
-                results.insertAdjacentHTML("beforeend", row);
-            }
-        }
-
-
-    //Doit être après la fonction qui gen l'HTML pour pouvoir ensuite attendre la réponse de la requête
-    xmlHttp.open("GET", "https://cors-anywhere.herokuapp.com/https://pastebin.com/raw/aBRp3TQw", false);
-    xmlHttp.send();
-
-
-
-    function openForm() {
-        document.getElementById("popupForm").style.display = "block";
-        //crée une instance de DOMParser défini par la variable parser
-        let parser = new DOMParser(),
-            //converti la data en XML
-            xml = parser.parseFromString(xmlHttp.responseText, "text/xml");
-        //Prend l'élément Team dans le XML, soit tout le document
-        var bonnes_pratiques_list = xml.getElementsByTagName('root');
-        for(var i = 0; i < bonnes_pratiques_list[0].childElementCount/14; i++) {
-            const recap = `<tr> 
-                        <td align="left">` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[0].innerHTML + `</td>
-                        <td align="left">` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[1].innerHTML + `</td>
-                        <td align="left">` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[2].innerHTML + `</td>
-                        <td align="left">` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[3].innerHTML + `</td>
-                        <td align="left">` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[4].innerHTML + `</td>
-                        <td align="left">` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[5].innerHTML + `</td>
-                        <td align="left">` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[6].innerHTML + `</td>
-                        <td align="left">` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[7].innerHTML + `</td>
-                        <td align="left">` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[8].innerHTML + `</td>
-                        <td align="left">` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[9].innerHTML + `</td>
-                        <td align="left">` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[10].innerHTML + `</td>
-                        <td align="left">` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[11].innerHTML + `</td>
-                        <td align="left">` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[12].innerHTML + `</td>
-                    </tr>`;
-            const result = document.querySelector("#recapitulatif");
-            result.insertAdjacentHTML("beforeend", recap);
-        }
-    }
-    //Print le pdf
-    function printDiv() {
-        var divContents = document.getElementById("table-2").innerHTML;
-        var a = window.open();
-        a.document.write('<html>');
-        a.document.write('<head><title Id="MyPractice">Softball</title></head>');
-        a.document.write('<body>');
-        a.document.write('<style type="text/css">table{border-collapse: collapse;}th, td{border: 1px solid black;padding: 10px;</style>');
-        a.document.write(divContents);
-        a.document.write('</body></html>');
-        a.document.close();
-        a.print();
-    }
-    </script>
-</body>
-
+         </form>
+      </section>
+      <footer>
+         <p>site web créé par Corentin, Alexandre, Kaoutar, Lucie dans le cadre du projet Design4green</p>
+      </footer>
+      <script>
+         var xmlHttp = new XMLHttpRequest();
+         
+         function closeForm() {
+             document.getElementById("popupForm").style.display = "none";
+         }
+         
+         
+         //Permets de créer l'HTML à l'ouverture de la page depuis le XML
+         xmlHttp.onload = function() {
+                 //crée une instance de DOMParser défini par la variable parser
+                 let parser = new DOMParser(),
+                     //converti la data en XML
+                     xml = parser.parseFromString(this.responseText, "text/xml");
+                 //Prend l'élément Team dans le XML, soit tout le document
+                 var bonnes_pratiques_list = xml.getElementsByTagName('root');
+                 var famille;
+                 var famille_avant = bonnes_pratiques_list[0].getElementsByTagName('row-0')[0].innerHTML;
+                 var recommandation;
+                 var thematique;
+                 var critere;
+                 //fait un for sur la longueur du XML donc pour chaque ligne, et a chaque ligne affiche le nom de l'équipe ses points et son classement, puis crée une ligne de tableau
+                 for(var i = 0; i < bonnes_pratiques_list[0].childElementCount / 14; i++) {
+                     famille = bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[0].innerHTML;
+                     recommandation = bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[1].innerHTML;
+                     thematique = bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[2].innerHTML;
+                     critere = bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[3].innerHTML;
+                     //mets dans la variable row l'HTML avec les éléments de l'équipe traité dans la boucle for
+                     const row = (famille != famille_avant ? ('<hr>') : '') + `<a class="odd-card card3    bgd-1">
+                                     <div class="famille-carte" id="${famille}">
+                                         <span class="famille">${famille}</span>` + (bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[13].innerHTML == 1 ? (`<span class="incontournable">Incontournable</span>`) : '') + `
+                                     </div>
+                                     <h2>${recommandation}</h2>
+                                     <p class="small">${thematique}</p>
+                                     <p class="small ">${critere}</p>
+                                     <input type="checkbox" id="checkbox" name="checkbox_` + i + `" ` + (bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[13].innerHTML == 1 ? (`checked`) : '') + `>
+                                 </a>`;
+                     //mets dans la variable results l'élément du site HTML dont l'id est results
+                     const results = document.querySelector("#container-familles");
+                     famille_avant = famille;
+                     //insert dans results le code HTML généré avec les éléments de l'équipe
+                     results.insertAdjacentHTML("beforeend", row);
+                 }
+             }
+         
+         
+         //Doit être après la fonction qui gen l'HTML pour pouvoir ensuite attendre la réponse de la requête
+         xmlHttp.open("GET", "https://cors-anywhere.herokuapp.com/https://pastebin.com/raw/aBRp3TQw", false);
+         xmlHttp.send();
+         
+         
+         
+         function openForm() {
+             document.getElementById("popupForm").style.display = "block";
+             //crée une instance de DOMParser défini par la variable parser
+             let parser = new DOMParser(),
+                 //converti la data en XML
+                 xml = parser.parseFromString(xmlHttp.responseText, "text/xml");
+             //Prend l'élément Team dans le XML, soit tout le document
+             var bonnes_pratiques_list = xml.getElementsByTagName('root');
+             for(var i = 0; i < bonnes_pratiques_list[0].childElementCount/14; i++) {
+                 const recap = `<tr> 
+                             <td>` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[0].innerHTML + `</td>
+                             <td>` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[1].innerHTML + `</td>
+                             <td>` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[2].innerHTML + `</td>
+                             <td>` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[3].innerHTML + `</td>
+                             <td>` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[4].innerHTML + `</td>
+                             <td>` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[5].innerHTML + `</td>
+                             <td>` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[6].innerHTML + `</td>
+                             <td>` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[7].innerHTML + `</td>
+                             <td>` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[8].innerHTML + `</td>
+                             <td>` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[9].innerHTML + `</td>
+                             <td>` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[10].innerHTML + `</td>
+                             <td>` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[11].innerHTML + `</td>
+                             <td>` + bonnes_pratiques_list[0].getElementsByTagName('row-' + i)[12].innerHTML + `</td>
+                         </tr>`;
+                 const result = document.querySelector("#recapitulatif");
+                 result.insertAdjacentHTML("beforeend", recap);
+             }
+         }
+         //Print le pdf
+         function printDiv() {
+             var divContents = document.getElementById("table-2").innerHTML;
+             var a = window.open();
+             a.document.write('<html>');
+             a.document.write('<head><title Id="MyPractice">Softball</title></head>');
+             a.document.write('<body>');
+             a.document.write('<style type="text/css">table{border-collapse: collapse;}th, td{border: 1px solid black;padding: 10px;</style>');
+             a.document.write(divContents);
+             a.document.write('</body></html>');
+             a.document.close();
+             a.print();
+         }
+      </script>
+   </body>
 </html>
