@@ -49,6 +49,16 @@ nav {
   min-height: 50px;
 }
 
+/*Table dans la fenetre pop up */
+table{
+  border-collapse: collapse;
+}
+
+th, td{
+  border: 1px solid black;
+  padding: 10px;
+}
+
 nav ul {
   padding-left: 0px;
 /*  background-color: #090808;
@@ -376,6 +386,11 @@ p.small-bas-droite {
 /* Stylez le bouton pour annuler */
 .form-container .cancel {
   background-color: #cc0000;
+}
+
+/*Stylez le bouton pour générer le pdf */
+.form-container .generate {
+  background-color: #2ca924;
 }
 
 /* Planez les effets pour les boutons */
