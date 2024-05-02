@@ -1,4 +1,4 @@
-Les sources de ce challenge, reste la propriété de l'équipe de développeurs Corentin  Lucie Vuillemot Alexandre Lucas Kaoutar Rhfouda.
+Les sources de ce challenge, reste la propriété de l'équipe de développeurs Coco  Lucie Vuillemot Alexandre Lucas Kaoutar Rhfouda.
 
 Avant d'accéder au site veuillez demander l'accès à la demo ici:
 https://cors-anywhere.herokuapp.com/corsdemo
